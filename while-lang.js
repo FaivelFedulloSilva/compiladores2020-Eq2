@@ -40,13 +40,15 @@ class Var extends Exp {
 
 class Add extends Exp {
     constructor(a1, a2) {
-        super();
-            defineTypedProperty(this, 'a1', Exp, a1);
-            defineTypedProperty(this, 'a2', Exp, a2);
+      super();
+        defineTypedProperty(this, 'a1', Exp, a1);
+        defineTypedProperty(this, 'a2', Exp, a2);
     }
 
     eval(state) {
-        return this.a1.eval(state) + this.a2.eval(state);
+        const v1 = checkType('a1', 'number', this.a1.eval(state));
+        const v2 = checkType('a2', 'number', this.a2.eval(state));
+        return v1 + v2;
     }
 }
 
@@ -58,7 +60,9 @@ class Mult extends Exp {
     }
 
     eval(state) {
-        return this.a1.eval(state) * this.a2.eval(state);
+      const v1 = checkType('a1', 'number', this.a1.eval(state));
+      const v2 = checkType('a2', 'number', this.a2.eval(state));
+      return v1 * v2;
     }
 }
 
@@ -70,7 +74,9 @@ class Sub extends Exp {
     }
 
     eval(state) {
-        return this.a1.eval(state) - this.a2.eval(state);
+      const v1 = checkType('a1', 'number', this.a1.eval(state));
+      const v2 = checkType('a2', 'number', this.a2.eval(state));
+      return v1 - v2;
     }
 }
 
@@ -105,7 +111,9 @@ class CompLte extends Exp {
     }
 
     eval(state) {
-        return this.a1.eval(state) <= this.a2.eval(state);
+      const v1 = checkType('a1', 'number', this.a1.eval(state));
+      const v2 = checkType('a2', 'number', this.a2.eval(state));
+      return v1 <= v2;
     }
 }
 
@@ -116,7 +124,8 @@ class Neg extends Exp {
     }
 
     eval(state) {
-        return !this.b.eval(state);
+      const v1 = checkType('b', 'boolean', this.b.eval(state));
+        return v1;
     }
 }
 
@@ -129,7 +138,9 @@ class And extends Exp {
     }
 
     eval(state) {
-        return this.b1.eval(state) && this.b2.eval(state);
+      const v1 = checkType('b1', 'boolean', this.b1.eval(state));
+      const v2 = checkType('b2', 'boolean', this.b2.eval(state));
+      return v1 && v2;
     }
 }
 
@@ -182,7 +193,8 @@ class IfThenElse extends Stmt {
 
     eval(state) {
         state = state || new Map();
-        if (this.b.eval(state)) {
+        const v1 = checkType('b', 'boolean', this.b.eval(state));
+        if (v1) {
             return this.s1.eval(state);
         } else {
             return this.s2.eval(state);
@@ -199,7 +211,8 @@ class WhileDo extends Stmt {
 
     eval(state) {
         state = state || new Map();
-        while (this.b.eval(state)) {
+        const v1 = checkType('b', 'boolean', this.b.eval(state));
+        while (v1) {
             state = this.s1.eval(state);
         }
         return state;
@@ -210,15 +223,17 @@ class WhileDo extends Stmt {
 
 const TESTS = [
     new Assign('x', new Num(1.2)),
-    
     new Seq([new Assign('x', new Num(77)), new Assign('y', new Mult(new Num(2), new Var('x')))]),
-    unparse("new Assign('x', new Num(1.2))")
+    new Assign('b', new Bool(true)),
+    new Assign('f', new Bool(false)),
+    // unparse("new Assign('x', new Num(1.2))")
+    unparse("new Assign('b', new Bool(true))")
 ];
 
 // Utilities ///////////////////////////////////////////////////////////////////
 
 function checkType(name, type, value) {
-    if (typeof type === 'string' || type === 'number' || type === 'boolean') {
+    if (typeof type === 'string') {
       if (typeof value !== type) {
         throw new TypeError(`Expected ${type} for ${name}, but got ${typeof value}!`);
       }
@@ -234,6 +249,8 @@ function checkType(name, type, value) {
       }
       value.forEach((v, i) => checkType(`${name}[${i}]`, type[0], v));
     }
+
+    return value
   }
 
 function defineTypedProperty(obj, prop, type, value) {
