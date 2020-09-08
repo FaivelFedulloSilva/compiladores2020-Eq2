@@ -13,6 +13,9 @@ class Exp {
     eval() {
         throw new Error(`${this.constructor.name}.eval() is not implemented!`);
     }
+    unparse() {
+        throw new Error(`${this.constructor.name}.unparse() is not implemented!`);
+    }
 }
 
 class Num extends Exp {
@@ -25,6 +28,10 @@ class Num extends Exp {
     eval() {
         return this.n;
     }
+
+  unparse() {
+    return `${this.n}`;
+  }
 }
 
 class Var extends Exp {
@@ -36,6 +43,10 @@ class Var extends Exp {
     eval(state) {
         return state.get(this.x);
     }
+
+  unparse() {
+    return `VAR ${this.x}`
+  }
 }
 
 class Add extends Exp {
@@ -50,6 +61,9 @@ class Add extends Exp {
         const v2 = checkType('a2', 'number', this.a2.eval(state));
         return v1 + v2;
     }
+  unparse() {
+    return `${this.a1.unparse()} AND ${this.a2.unparse()}`
+  }
 }
 
 class Mult extends Exp {
@@ -64,6 +78,10 @@ class Mult extends Exp {
       const v2 = checkType('a2', 'number', this.a2.eval(state));
       return v1 * v2;
     }
+
+  unparse() {
+    return `${this.a1.unparse()} * ${this.a2.unparse()}`;
+  }
 }
 
 class Sub extends Exp {
@@ -168,6 +186,10 @@ class Assign extends Stmt {
         state.set(this.x, this.a.eval(state));
         return state;
     }
+    
+  unparse() {
+    return `\nASSIGN ${this.x} = ${this.a.unparse()}`
+  }
 }
 
 class Seq extends Stmt {
@@ -181,6 +203,10 @@ class Seq extends Stmt {
         state = state || new Map();
         return this.stmt.reduce((s, stmt) => stmt.eval(s), state);
     }
+
+  unparse() {
+    return `{ ${this.stmts.map(stmt => stmt.unparse()).join(';')} }`
+  }
 }
 
 class IfThenElse extends Stmt {
@@ -222,13 +248,18 @@ class WhileDo extends Stmt {
 // Examples ////////////////////////////////////////////////////////////////////
 
 const TESTS = [
+    new Assign('x', new Add(new Num(3), new Num(5))),
+    new IfThenElse(new Bool(true), new Seq([new Assign('x', new Num(1.2))
+]), new Seq([new Assign('j', new Num(13))
+])),
     new Assign('x', new Num(1.2)),
     new Seq([new Assign('x', new Num(77)), new Assign('y', new Mult(new Num(2), new Var('x')))]),
     new Assign('b', new Bool(true)),
     new Assign('f', new Bool(false)),
     // unparse("new Assign('x', new Num(1.2))")
-    unparse("new Assign('b', new Bool(true))")
 ];
+
+console.log(TESTS[1].unparse())
 
 // Utilities ///////////////////////////////////////////////////////////////////
 
@@ -264,10 +295,4 @@ module.exports = {
     Bool, CompEq, CompLte, Neg, And,
     Stmt, Assign, Seq, IfThenElse, WhileDo,
     TESTS,
-  }
-  
-function unparse(toAST){
-    const acorn = require('acorn');
-    const body = acorn.parse(toAST).body;
-    console.log(body);
   }
