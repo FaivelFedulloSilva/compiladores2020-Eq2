@@ -107,6 +107,10 @@ class Bool extends Exp {
     eval() {
         return this.b;
     }
+    
+    unparse() {
+        return `${this.b}`
+    }
 }
 
 class CompEq extends Exp {
@@ -118,6 +122,10 @@ class CompEq extends Exp {
 
     eval(state) {
         return this.a1.eval(state) === this.a2.eval(state);
+    }
+
+    unparse() {
+        return `${this.a1.unparse()} === ${this.a2.unparse()}`
     }
 }
 
@@ -133,6 +141,10 @@ class CompLte extends Exp {
       const v2 = checkType('a2', 'number', this.a2.eval(state));
       return v1 <= v2;
     }
+
+    unparse() {
+        return `${this.a1.unparse()} <= ${this.a2.unparse()}`
+    }
 }
 
 class Neg extends Exp {
@@ -144,6 +156,10 @@ class Neg extends Exp {
     eval(state) {
       const v1 = checkType('b', 'boolean', this.b.eval(state));
         return v1;
+    }
+
+    unparse() {
+        return `NOT ${this.b.unparse()}`
     }
 }
 
@@ -160,6 +176,10 @@ class And extends Exp {
       const v2 = checkType('b2', 'boolean', this.b2.eval(state));
       return v1 && v2;
     }
+
+    unparse() {
+        return `${this.b1.unparse()} AND ${this.b2.unparse()}`
+    }
 }
 
 class Stmt {
@@ -168,6 +188,10 @@ class Stmt {
       }
     eval() {
         throw new Error(`${this.constructor.name}.eval() is not implemented!`);
+    }
+
+    unparse() {
+        throw new Error(`${this.constructor.name}.unparse() is not implemented!`);
     }
 }
 
@@ -226,6 +250,10 @@ class IfThenElse extends Stmt {
             return this.s2.eval(state);
         }
     }
+    
+  unparse() {
+      return `IF ${this.b.unparse()} THEN ${this.s1.unparse()} ELSE ${this.s2.unparse()}`
+  }
 }
 
 class WhileDo extends Stmt {
@@ -242,6 +270,10 @@ class WhileDo extends Stmt {
             state = this.s1.eval(state);
         }
         return state;
+    }
+
+    unparse() {
+        return `WHILE ${this.b.unparse()} DO ${this.s.unparse()}`
     }
 }
 
