@@ -15,7 +15,10 @@ export class Exp {
 export class Num extends Exp {
     constructor(n) {
         super();
-        defineTypedProperty(this, 'n', 'number', n);
+        if (checkType(n, int, typeof n) || checkType(n, float, typeof n))
+        {
+            defineTypedProperty(this, 'n', 'number', n);
+        }
     }
 
     eval() {
@@ -26,7 +29,10 @@ export class Num extends Exp {
 export class Var extends Exp {
     constructor(x) {
         super();
-        defineTypedProperty(this, 'x', 'string', x);
+        if (checkType(x, string, typeof x))
+        {
+            defineTypedProperty(this, 'x', 'string', x);
+        }
     }
 
     eval(state) {
@@ -37,8 +43,12 @@ export class Var extends Exp {
 export class Add extends Exp {
     constructor(a1, a2) {
         super();
-        defineTypedProperty(this, 'a1', Exp, a1);
-        defineTypedProperty(this, 'a2', Exp, a2);
+        if ((checkType(a1, int, typeof a1) || checkType(a1, float, typeof a1))
+        && (checkType(a2, int, typeof a2) || checkType(a2, float, typeof a2)))
+        {
+            defineTypedProperty(this, 'a1', Exp, a1);
+            defineTypedProperty(this, 'a2', Exp, a2);
+        }
     }
 
     eval(state) {
@@ -49,8 +59,12 @@ export class Add extends Exp {
 export class Mult extends Exp {
     constructor(a1, a2) {
         super();
-        defineTypedProperty(this, 'a1', Exp, a1);
-        defineTypedProperty(this, 'a2', Exp, a2);
+        if ((checkType(a1, int, typeof a1) || checkType(a1, float, typeof a1))
+        && (checkType(a2, int, typeof a2) || checkType(a2, float, typeof a2)))
+        {
+            defineTypedProperty(this, 'a1', Exp, a1);
+            defineTypedProperty(this, 'a2', Exp, a2);
+        }
     }
 
     eval(state) {
@@ -61,8 +75,12 @@ export class Mult extends Exp {
 export class Sub extends Exp {
     constructor(a1, a2) {
         super();
-        defineTypedProperty(this, 'a1', Exp, a1);
-        defineTypedProperty(this, 'a2', Exp, a2);
+        if ((checkType(a1, int, typeof a1) || checkType(a1, float, typeof a1))
+        && (checkType(a2, int, typeof a2) || checkType(a2, float, typeof a2)))
+        {
+            defineTypedProperty(this, 'a1', Exp, a1);
+            defineTypedProperty(this, 'a2', Exp, a2);
+        }
     }
 
     eval(state) {
@@ -73,7 +91,10 @@ export class Sub extends Exp {
 export class Bool extends Exp {
     constructor(b) {
         super();
-        defineTypedProperty(this, 'b', 'boolean', b);
+        if (checkType(b, boolean, typeof b))
+        {
+            defineTypedProperty(this, 'b', 'boolean', b);
+        }
     }
 
     eval() {
@@ -84,8 +105,11 @@ export class Bool extends Exp {
 export class CompEq extends Exp {
     constructor(a1, a2) {
         super();
-        defineTypedProperty(this, 'a1', Exp, a1);
-        defineTypedProperty(this, 'a2', Exp, a2);
+        if (checkType(a1, boolean, typeof a1) && checkType(a2, boolean, typeof a2))
+        {
+            defineTypedProperty(this, 'a1', Exp, a1);
+            defineTypedProperty(this, 'a2', Exp, a2);
+        }
     }
 
     eval(state) {
@@ -96,8 +120,11 @@ export class CompEq extends Exp {
 export class CompLte extends Exp {
     constructor(a1, a2) {
         super();
-        defineTypedProperty(this, 'a1', Exp, a1);
-        defineTypedProperty(this, 'a2', Exp, a2);
+        if (checkType(a1, boolean, typeof a1) && checkType(a2, boolean, typeof a2))
+        {
+            defineTypedProperty(this, 'a1', Exp, a1);
+            defineTypedProperty(this, 'a2', Exp, a2);
+        }
     }
 
     eval(state) {
@@ -108,7 +135,10 @@ export class CompLte extends Exp {
 export class Neg extends Exp {
     constructor(b) {
         super();
-        defineTypedProperty(this, 'b', Exp, b);
+        if (checkType(b, boolean, typeof b))
+        {
+            defineTypedProperty(this, 'b', Exp, b);
+        }
     }
 
     eval(state) {
@@ -119,8 +149,11 @@ export class Neg extends Exp {
 export class And extends Exp {
     constructor(b1, b2) {
         super();
-        defineTypedProperty(this, 'b1', Exp, b1);
-        defineTypedProperty(this, 'b2', Exp, b2);
+        if (checkType(b1, boolean, typeof b1) && checkType(b2, boolean, typeof b2))
+        {
+            defineTypedProperty(this, 'b1', Exp, b1);
+            defineTypedProperty(this, 'b2', Exp, b2);
+        }
     }
 
     eval(state) {
@@ -138,8 +171,14 @@ export class Stmt {
 export class Assign extends Stmt {
     constructor(x, a) {
         super();
-        defineTypedProperty(this, 'x', 'string', x);
-        defineTypedProperty(this, 'a', Exp, a);
+        if (checkType(x, string, typeof x))
+        {
+            defineTypedProperty(this, 'x', 'string', x);
+        }
+        if ((checkType(a, int, typeof a)) || (checkType(a, float, typeof n)) || (checkType(a, boolean, typeof n)))
+        {
+            defineTypedProperty(this, 'a', Exp, a);
+        }
     }
 
     eval(state) {
@@ -152,7 +191,10 @@ export class Assign extends Stmt {
 export class Seq extends Stmt {
     constructor(stmts) {
         super();
-        defineTypedProperty(this, 'stmts', [Stmt], stmts);
+        if (checkType(stmts, Array, typeof stmts))
+        {
+            defineTypedProperty(this, 'stmts', [Stmt], stmts);
+        }
     }
 
     eval(state) {
@@ -164,9 +206,18 @@ export class Seq extends Stmt {
 export class IfThenElse extends Stmt {
     constructor(b, s1, s2) {
         super();
-        defineTypedProperty(this, 'b', Exp, b);
-        defineTypedProperty(this, 's1', Stmt, s1);
-        defineTypedProperty(this, 's2', Stmt, s2);
+        if (checkType(b, boolean, typeof b))
+        {
+            defineTypedProperty(this, 'b', Exp, b);
+        }
+        if (checkType(s1, Array, typeof s1))
+        {
+            defineTypedProperty(this, 's1', Stmt, s1);
+        }
+        if (checkType(s2, Array, typeof s2))
+        {
+            defineTypedProperty(this, 's2', Stmt, s2);
+        }
     }
 
     eval(state) {
@@ -182,8 +233,14 @@ export class IfThenElse extends Stmt {
 export class WhileDo extends Stmt {
     constructor(b, s) {
         super();
-        defineTypedProperty(this, 'b', Exp, b);
-        defineTypedProperty(this, 's', Stmt, s);
+        if (checkType(b, boolean, typeof b))
+        {
+            defineTypedProperty(this, 'b', Exp, b);
+        }
+        if (checkType(s, Array, typeof s))
+        {
+            defineTypedProperty(this, 's', Stmt, s);
+        }
     }
 
     eval(state) {
@@ -206,17 +263,37 @@ export const TESTS = [
 
 function checkType(name, type, value) {
     if (typeof type === 'string') {
-        if (typeof value !== type) {
+        return True;
+    }
+    else if (typeof value !== type) {
+            throw new TypeError(`Expected ${type} for ${name}, but got ${typeof value}!`);
+        }
+    }
+    if ((typeof type === 'int') || (typeof type === 'float')) {
+        return True;
+    }
+    else if (typeof value !== type) {
+            throw new TypeError(`Expected ${type} for ${name}, but got ${typeof value}!`);
+        }
+    }
+    if (typeof type === 'boolean') {
+        return True;
+    }
+    else if (typeof value !== type) {
             throw new TypeError(`Expected ${type} for ${name}, but got ${typeof value}!`);
         }
     }
     if (typeof type === 'function') {
-        if (!(value instanceof type)) {
+        return True;
+    }
+        else if (!(value instanceof type)) {
             throw new TypeError(`Expected ${type.name} for ${name}, but got ${value && value.constructor.name}!`);
         }
     }
     if (Array.isArray(type)) {
-        if (!Array.isArray(value)) {
+        return True;
+    }
+        else if (!Array.isArray(value)) {
             throw new TypeError(`Expected array for ${name}, but got ${value && value.constructor.name}!`);
         }
         value.forEach((v, i) => checkType(`${name}[${i}]`, type[0], v));
