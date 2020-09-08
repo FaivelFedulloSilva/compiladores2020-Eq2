@@ -15,7 +15,7 @@ export class Exp {
 export class Num extends Exp {
     constructor(n) {
         super();
-        if (checkType(n, int, typeof n) || checkType(n, float, typeof n))
+        if (checkType(n, 'int', typeof n) || checkType(n, float, typeof n))
         {
             defineTypedProperty(this, 'n', 'number', n);
         }
@@ -29,7 +29,7 @@ export class Num extends Exp {
 export class Var extends Exp {
     constructor(x) {
         super();
-        if (checkType(x, string, typeof x))
+        if (checkType(x, 'string', typeof x))
         {
             defineTypedProperty(this, 'x', 'string', x);
         }
@@ -43,8 +43,8 @@ export class Var extends Exp {
 export class Add extends Exp {
     constructor(a1, a2) {
         super();
-        if ((checkType(a1, int, typeof a1) || checkType(a1, float, typeof a1))
-        && (checkType(a2, int, typeof a2) || checkType(a2, float, typeof a2)))
+        if ((checkType(a1, 'int', typeof a1) || checkType(a1, 'float', typeof a1))
+        && (checkType(a2, 'int', typeof a2) || checkType(a2, 'float', typeof a2)))
         {
             defineTypedProperty(this, 'a1', Exp, a1);
             defineTypedProperty(this, 'a2', Exp, a2);
@@ -59,8 +59,8 @@ export class Add extends Exp {
 export class Mult extends Exp {
     constructor(a1, a2) {
         super();
-        if ((checkType(a1, int, typeof a1) || checkType(a1, float, typeof a1))
-        && (checkType(a2, int, typeof a2) || checkType(a2, float, typeof a2)))
+        if ((checkType(a1, 'int', typeof a1) || checkType(a1, 'float', typeof a1))
+        && (checkType(a2, 'int', typeof a2) || checkType(a2, 'float', typeof a2)))
         {
             defineTypedProperty(this, 'a1', Exp, a1);
             defineTypedProperty(this, 'a2', Exp, a2);
@@ -75,8 +75,8 @@ export class Mult extends Exp {
 export class Sub extends Exp {
     constructor(a1, a2) {
         super();
-        if ((checkType(a1, int, typeof a1) || checkType(a1, float, typeof a1))
-        && (checkType(a2, int, typeof a2) || checkType(a2, float, typeof a2)))
+        if ((checkType(a1, 'int', typeof a1) || checkType(a1, 'float', typeof a1))
+        && (checkType(a2, 'int', typeof a2) || checkType(a2, 'float', typeof a2)))
         {
             defineTypedProperty(this, 'a1', Exp, a1);
             defineTypedProperty(this, 'a2', Exp, a2);
@@ -91,7 +91,7 @@ export class Sub extends Exp {
 export class Bool extends Exp {
     constructor(b) {
         super();
-        if (checkType(b, boolean, typeof b))
+        if (checkType(b, 'boolean', typeof b))
         {
             defineTypedProperty(this, 'b', 'boolean', b);
         }
@@ -105,7 +105,7 @@ export class Bool extends Exp {
 export class CompEq extends Exp {
     constructor(a1, a2) {
         super();
-        if (checkType(a1, boolean, typeof a1) && checkType(a2, boolean, typeof a2))
+        if (checkType(a1, 'boolean', typeof a1) && checkType(a2, 'boolean', typeof a2))
         {
             defineTypedProperty(this, 'a1', Exp, a1);
             defineTypedProperty(this, 'a2', Exp, a2);
@@ -120,7 +120,7 @@ export class CompEq extends Exp {
 export class CompLte extends Exp {
     constructor(a1, a2) {
         super();
-        if (checkType(a1, boolean, typeof a1) && checkType(a2, boolean, typeof a2))
+        if (checkType(a1, 'boolean', typeof a1) && checkType(a2, 'boolean', typeof a2))
         {
             defineTypedProperty(this, 'a1', Exp, a1);
             defineTypedProperty(this, 'a2', Exp, a2);
@@ -135,7 +135,7 @@ export class CompLte extends Exp {
 export class Neg extends Exp {
     constructor(b) {
         super();
-        if (checkType(b, boolean, typeof b))
+        if (checkType(b, 'boolean', typeof b))
         {
             defineTypedProperty(this, 'b', Exp, b);
         }
@@ -149,7 +149,7 @@ export class Neg extends Exp {
 export class And extends Exp {
     constructor(b1, b2) {
         super();
-        if (checkType(b1, boolean, typeof b1) && checkType(b2, boolean, typeof b2))
+        if (checkType(b1, 'boolean', typeof b1) && checkType(b2, 'boolean', typeof b2))
         {
             defineTypedProperty(this, 'b1', Exp, b1);
             defineTypedProperty(this, 'b2', Exp, b2);
@@ -171,11 +171,11 @@ export class Stmt {
 export class Assign extends Stmt {
     constructor(x, a) {
         super();
-        if (checkType(x, string, typeof x))
+        if (checkType(x, 'string', typeof x))
         {
             defineTypedProperty(this, 'x', 'string', x);
         }
-        if ((checkType(a, int, typeof a)) || (checkType(a, float, typeof n)) || (checkType(a, boolean, typeof n)))
+        if ((checkType(a, 'int', typeof a)) || (checkType(a, 'float', typeof n)) || (checkType(a, 'boolean', typeof n)))
         {
             defineTypedProperty(this, 'a', Exp, a);
         }
@@ -206,15 +206,15 @@ export class Seq extends Stmt {
 export class IfThenElse extends Stmt {
     constructor(b, s1, s2) {
         super();
-        if (checkType(b, boolean, typeof b))
+        if (checkType(b, 'boolean', typeof b))
         {
             defineTypedProperty(this, 'b', Exp, b);
         }
-        if (checkType(s1, Array, typeof s1))
+        if (checkType(s1, 'Array', typeof s1))
         {
             defineTypedProperty(this, 's1', Stmt, s1);
         }
-        if (checkType(s2, Array, typeof s2))
+        if (checkType(s2, 'Array', typeof s2))
         {
             defineTypedProperty(this, 's2', Stmt, s2);
         }
@@ -233,11 +233,11 @@ export class IfThenElse extends Stmt {
 export class WhileDo extends Stmt {
     constructor(b, s) {
         super();
-        if (checkType(b, boolean, typeof b))
+        if (checkType(b, 'boolean', typeof b))
         {
             defineTypedProperty(this, 'b', Exp, b);
         }
-        if (checkType(s, Array, typeof s))
+        if (checkType(s, 'Array', typeof s))
         {
             defineTypedProperty(this, 's', Stmt, s);
         }
@@ -262,32 +262,21 @@ export const TESTS = [
 // Utilities ///////////////////////////////////////////////////////////////////
 
 function checkType(name, type, value) {
-    if (typeof type === 'string') {
-        return True;
+    const primitiveTypes = ['string', 'int', 'boolean'] 
+    if (primitiveTypes.includes(typeof type)) {
+        return true;
     }
     else if (typeof value !== type) {
-            throw new TypeError(`Expected ${type} for ${name}, but got ${typeof value}!`);
-    }
-    if ((typeof type === 'int') || (typeof type === 'float')) {
-        return True;
-    }
-    else if (typeof value !== type) {
-            throw new TypeError(`Expected ${type} for ${name}, but got ${typeof value}!`);
-    }
-    if (typeof type === 'boolean') {
-        return True;
-    }
-    else if (typeof value !== type) {
-            throw new TypeError(`Expected ${type} for ${name}, but got ${typeof value}!`);
+        throw new TypeError(`Expected ${type} for ${name}, but got ${typeof value}!`);
     }
     if (typeof type === 'function') {
-        return True;
+        return true;
     }
         else if (!(value instanceof type)) {
             throw new TypeError(`Expected ${type.name} for ${name}, but got ${value && value.constructor.name}!`);
     }
     if (Array.isArray(type)) {
-        return True;
+        return true;
     }
         else if (!Array.isArray(value)) {
             throw new TypeError(`Expected array for ${name}, but got ${value && value.constructor.name}!`);
