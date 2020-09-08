@@ -267,28 +267,24 @@ function checkType(name, type, value) {
     }
     else if (typeof value !== type) {
             throw new TypeError(`Expected ${type} for ${name}, but got ${typeof value}!`);
-        }
     }
     if ((typeof type === 'int') || (typeof type === 'float')) {
         return True;
     }
     else if (typeof value !== type) {
             throw new TypeError(`Expected ${type} for ${name}, but got ${typeof value}!`);
-        }
     }
     if (typeof type === 'boolean') {
         return True;
     }
     else if (typeof value !== type) {
             throw new TypeError(`Expected ${type} for ${name}, but got ${typeof value}!`);
-        }
     }
     if (typeof type === 'function') {
         return True;
     }
         else if (!(value instanceof type)) {
             throw new TypeError(`Expected ${type.name} for ${name}, but got ${value && value.constructor.name}!`);
-        }
     }
     if (Array.isArray(type)) {
         return True;
@@ -297,7 +293,6 @@ function checkType(name, type, value) {
             throw new TypeError(`Expected array for ${name}, but got ${value && value.constructor.name}!`);
         }
         value.forEach((v, i) => checkType(`${name}[${i}]`, type[0], v));
-    }
 }
 
 function defineTypedProperty(obj, prop, type, value) {
