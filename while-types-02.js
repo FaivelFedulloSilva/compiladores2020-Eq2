@@ -68,6 +68,10 @@ class Num extends Exp {
   check() {
     return 'number';
   }
+
+  generateIL(context){
+    return `ldc.i4 ${this.n}\n`;
+  }
 }
 
 class VarValue extends Exp {
@@ -98,6 +102,10 @@ class VarValue extends Exp {
 
     return variable.type
   }
+
+  generateIL(context){
+    return `ldloc ${context.variables.get(this.x)}\n`
+  }
 }
 
 class Add extends Exp {
@@ -125,6 +133,10 @@ class Add extends Exp {
       errors.push(`Type mismatch (${t1} + ${t2})`);
     }
     return 'number';
+  }
+
+  generateIL(context){
+    return `${this.e1.generateIL(context)}${this.e2.generateIL(context)}add\n`
   }
 }
 
@@ -154,6 +166,9 @@ class Mult extends Exp {
     }
     return 'number';
   }
+  generateIL(context){
+    return `${this.e1.generateIL(context)}${this.e2.generateIL(context)}mul\n`
+  }
 }
 
 class Sub extends Exp {
@@ -182,6 +197,10 @@ class Sub extends Exp {
     }
     return {state, errors};
   }
+
+  generateIL(context){
+    return `${this.e1.generateIL(context)}${this.e2.generateIL(context)}sub\n`
+  }
 }
 
 class Bool extends Exp {
@@ -199,6 +218,14 @@ class Bool extends Exp {
 
   check() {
     return 'boolean';
+  }
+
+  generateIL(context){
+    if(this.b){
+      return `ldc.i4.1\n`;
+		}else{
+			return `ldc.i4.0\n`;
+		}	
   }
 }
 
@@ -230,6 +257,10 @@ class CompEq extends Exp {
     
     return { state, errors };
   }
+
+  generateIL(context){
+    return `${this.e1.generateIL(context)}${this.e2.generateIL(context)}ceq\n`
+  }
 }
 
 class CompLte extends Exp {
@@ -260,6 +291,10 @@ class CompLte extends Exp {
     
     return { state, errors };
   }
+
+  generateIL(context){
+    return `${this.e1.generateIL(context)}${this.e2.generateIL(context)}cgt\nneg\n`
+  }
 }
 
 class Neg extends Exp {
@@ -284,6 +319,10 @@ class Neg extends Exp {
     }
     
     return { state, errors };
+  }
+
+  generateIL(context){
+    return `${this.e.generateIL(context)}neg\n`
   }
 }
 
@@ -314,6 +353,10 @@ class And extends Exp {
     }
     
     return { state, errors };
+  }
+
+  generateIL(context){
+    return `${this.e1.generateIL(context)}${this.e2.generateIL(context)}and\n`
   }
 }
 
@@ -376,6 +419,20 @@ class VarDecl extends Stmt {
     state.set(x, { name: x, type: t, assigned: !!e });
     return { state, errors };
   }
+
+  variables(variablesMap){
+    if (!variablesMap.has(this.x)) {
+        variablesMap.set(this.x, variablesMap.size);
+    }
+    return variablesMap;  
+  }
+
+  generateIL(context){
+    if (!this.e){
+      return nop;
+    }
+    return `stloc ${this.e.generateIL(context)}\n`
+  }
 }
 
 class Assign extends Stmt {
@@ -414,6 +471,14 @@ class Assign extends Stmt {
     state.get(x).assigned = true;
     return { state, errors};
   }
+  variables(variablesMap){
+    return variablesMap;
+  }
+
+  generateIL(context){
+    return `stloc ${this.e.generateIL(context)}\n`
+  }
+
 }
 
 class Seq extends Stmt {
@@ -434,6 +499,15 @@ class Seq extends Stmt {
     state = state || new Map();
     errors = errors || [] 
     return this.stmts.reduce((s, stmt) => stmt.check(s.state, s.errors), { state, errors });
+  }
+
+  variables(variablesMap){
+    this.stmts.forEach(stmt => stmt.variables(variablesMap));
+    return variablesMap;
+  }
+
+  generateIL(context){
+    return this.stmts.reduce((s,stmt) => `${s}${stmt.generateIL(context)}`, '');
   }
 }
 
@@ -460,6 +534,11 @@ class IfThenElse extends Stmt {
     }
   }
 
+  variables(variablesMap){
+    this.s1.variables(variablesMap);
+    this.s2.variables(variablesMap);
+    return variablesMap;
+  }
   
 }
 
@@ -488,6 +567,11 @@ class WhileDo extends Stmt {
     errors = errors || [];
 
     return this.b.check(state, errors);
+  }
+
+  variables(variablesMap){
+    this.s.variables(variablesMap);
+    return variablesMap;
   }
 }
 
@@ -615,6 +699,9 @@ function defineTypedProperty(obj, prop, type, value) {
   Object.defineProperty(obj, prop, { value });
 }
 
+///variables, maxStack, generateIL
+
+
 if (require.main === module) {
 //   TESTS.forEach(({ code, start, end: expected }, i) => {
 //     const actual = code.eval(start);
@@ -630,19 +717,22 @@ if (require.main === module) {
 //   });
 
   TYPE_TESTS.forEach(({ code, start, end: expected }, i) => {
-    const actual = code.check(start, []);
-    console.log(`${actual}`)
+    const testVar = code.variables(new Map());
+    console.log(testVar)
+    // const actual = code.check(start, []);
+    // console.log(`${actual}`)
 
-    console.log(`\
-Test #${i}. Running check code
-  ${code}
-on state
-  ${showTypeState(start)}
-Expected result:
-  ${showTypeState(expected)}
-Actual result:
-  ${showTypeState(actual.state)}\n`);
+//     console.log(`\
+// Test #${i}. Running check code
+//   ${code}
+// on state
+//   ${showTypeState(start)}
+// Expected result:
+//   ${showTypeState(expected)}
+// Actual result:
+//   ${showTypeState(actual.state)}\n`);
   });
+
 } else {
   module.exports = {
     Exp,
