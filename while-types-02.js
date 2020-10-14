@@ -540,7 +540,20 @@ class IfThenElse extends Stmt {
     return variablesMap;
   }
   
+  generateIL(context){
+    const label1 = 'TAG_'+context.jumps++;
+    const label2 = 'TAG_'+context.jumps++;
+
+    salida = `${this.b.generateIL(context)}ldc.i4.0\nceq\nbrtrue.s ${label1}\n${this.s1.generateIL(context)}`
+    if (this.s2 != null)
+      return `${salida}br.s ${label2}\n${label1}:${this.s2.generateIL(context)}${label2}: nop\n` 
+    else
+    return `${salida}${label1}: nop\n`
+  }
 }
+
+// return `stloc ${this.e.generateIL(context)}\n`
+
 
 class WhileDo extends Stmt {
   static get props() {
