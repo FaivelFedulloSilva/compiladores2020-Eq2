@@ -544,15 +544,14 @@ class IfThenElse extends Stmt {
     const label1 = 'TAG_'+context.jumps++;
     const label2 = 'TAG_'+context.jumps++;
 
-    salida = `${this.b.generateIL(context)}ldc.i4.0\nceq\nbrtrue.s ${label1}\n${this.s1.generateIL(context)}`
+    output = `${this.b.generateIL(context)}ldc.i4.0\nceq\nbrtrue.s ${label1}\n${this.s1.generateIL(context)}`
     if (this.s2 != null)
-      return `${salida}br.s ${label2}\n${label1}:${this.s2.generateIL(context)}${label2}: nop\n` 
+      return `${output}br.s ${label2}\n${label1}: ${this.s2.generateIL(context)}${label2}: nop\n` 
     else
-    return `${salida}${label1}: nop\n`
+    return `${output}${label1}: nop\n`
   }
 }
 
-// return `stloc ${this.e.generateIL(context)}\n`
 
 
 class WhileDo extends Stmt {
@@ -586,6 +585,15 @@ class WhileDo extends Stmt {
     this.s.variables(variablesMap);
     return variablesMap;
   }
+
+  generateIL(context){
+    const label1 = 'TAG_'+context.jumps++;
+    const label2 = 'TAG_'+context.jumps++;
+
+    return `br.s ${label2}\n${label1}: ${this.b.generateIL(context)}${label2}: ${this.s.generateIL(context)}brtrue.s ${label1}\n` 
+   
+}
+
 }
 
 // Examples ////////////////////////////////////////////////////////////////////
