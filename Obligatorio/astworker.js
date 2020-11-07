@@ -79,7 +79,6 @@ function recursiveMultiAsignGeneration(parts, object, index) {
 // cadena de as posiciones o keys correspondientes 
 // EJ -         arr[1,2,3] = 100
 // Devuelve -   arr[3] = arr[2] = arr[1] = 100 (El AST correspondinete)
-// TODO - Modificar para que genere el mismo comportamiento tambien en objectos
 function changeToMultiAsign(AExpNode) {
     let parts = [AExpNode.right, ...AExpNode.left.property.expressions]
     let result = recursiveMultiAsignGeneration(parts, AExpNode.left.object, parts.length - 1);
@@ -189,15 +188,19 @@ const ASTworker = (ast) => {
 }
 
 
-code = `
-    var x =1, z =2;`
-let parsed = p.parse(code, {
-    locations: true,
-    ecmaVersion: 2020,
-    onInsertedSemicolon: (pos, loc) => { throw new SyntaxError(`Lack of semicolon (${loc.line}, ${loc.column})`) }
-});
+// code = `
+
+// `
+
+// let parsed = p.parse(code, {
+//     locations: true,
+//     ecmaVersion: 2020,
+//     onInsertedSemicolon: (pos, loc) => { throw new SyntaxError(`
+// Lack of semicolon($ { loc.line }, $ { loc.column })
+// `) }
+// });
 // console.log(util.inspect(parsed, false, null, true));
-console.log(cg.generate(ASTworker(parsed)))
+// console.log(cg.generate(ASTworker(parsed)))
 
 // TODO - crear un archivo 1sc.js que funcione como wraper de este modulo. 
 // Tiene que procesar las opciones, crear el modulo npm y llamar a este modulo
