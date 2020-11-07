@@ -1,35 +1,48 @@
 const acorn = require("acorn");
-const t = require("./date");
+const datePlugin = require("./date");
 const util = require("util");
 const cg = require('escodegen');
 const estools = require('estools');
 const estraverse = require('estraverse');
 const fs = require('fs');
-const { measureMemory } = require("vm");
 
+// datePlugin es lo que se importa de date. Es el plugin que permite a 
+// acorn reconocer el literal date
+const p = acorn.Parser.extend(datePlugin);
 
-const p = acorn.Parser.extend(t);
-
+// Genera el AST correspondiente a la asignacion de una funcion con 
+// nombre a una constante del mismo nombre. Luego se utilizara como 
+// template para generar ASTs similares
 const constFunctionTamplate = function() {
     let parsed = acorn.parse("const x = function x(){};")
     return parsed.body;
 }
 
+// Genera el AST correspondiente a la asignacion de un literal a un
+// elemento de array.Luego se utilizara como template para generar 
+// ASTs similares
 const assignTemplate = function() {
     let parsed = acorn.parse("x[1] = 'chau'")
     return parsed.body[0];
 }
 
+// Genera el AST correspondiente al acceso a un elemento de un array. 
+// Luego se utilizara para generar ASTs similares
 const memberTamplate = function() {
     let parsed = acorn.parse("x[1]")
     return parsed.body[0];
 }
 
+// Genera el AST correspondiente a la creacion de una fecha en formato 
+// Date.UTC. Luego se utilizara para generar ASTs similares
 const dateUTCTemplate = function() {
     let parsed = acorn.parse("new Date(Date.UTC(10,10))")
     return parsed.body[0].expression;
 }
 
+// Esta funcion toma un nodo correspodiente a la definicion de una 
+// funcion con nombre, y devuelve la msima funcion asignada a una 
+// constante del mismo nombre 
 function changeToConstFunction(FunctionNode) {
     let template = constFunctionTamplate()[0];
     let y = [...template.declarations]
@@ -42,6 +55,8 @@ function changeToConstFunction(FunctionNode) {
     return x;
 }
 
+// Funcion recursiva auxiliar de changeToMultiAsign. 
+// Es la que se encarga de armar el AST resultante 
 function recursiveMultiAsignGeneration(parts, object, index) {
     if (index > 0) {
         let newExp = {
@@ -59,10 +74,15 @@ function recursiveMultiAsignGeneration(parts, object, index) {
     }
 }
 
+// Esta funcion toma un nodo correspodiente a la asignacion simultarea 
+// a varias posiciones de array u objeto y devuelve la la asignacion en 
+// cadena de as posiciones o keys correspondientes 
+// EJ -         arr[1,2,3] = 100
+// Devuelve -   arr[3] = arr[2] = arr[1] = 100 (El AST correspondinete)
+// TODO - Modificar para que genere el mismo comportamiento tambien en objectos
 function changeToMultiAsign(AExpNode) {
     let parts = [AExpNode.right, ...AExpNode.left.property.expressions]
     let result = recursiveMultiAsignGeneration(parts, AExpNode.left.object, parts.length - 1);
-    // console.log(result)
     return result;
 }
 
@@ -75,19 +95,37 @@ function changeToMultiAsign(AExpNode) {
 
 
 
-
+// Funcion principal a exportar.Dado un AST lo recorre y realiza las
+// modificaciones de codigo necesarias. El AST se recorre de manera 
+// automatica con la libreria estraverse, la cual toma como parametros
+// el AST y un objeto con dos funciones, enter y leave.La funcion enter
+// se ejecuta sobre cada nodo cuando se llega al mismo, es decir antes
+// de moverse recursivamente a sus hijos.La funcion leave se ejecuta al
+// abandonar un nodo, es decir, al terminar de procesar sus hijos.
+// Particularmente, al usar estraverse.replace, cuando se ejecuta alguna
+// de las dos funciones, si no se devuelve nada, el nodo visitado no se
+// modifica.Por otro lado si se retorna un nodo, modificado o no, el
+// nodo siendo visitado es reemplazado por el nodo retornado
 const ASTworker = (ast) => {
     result = estraverse.replace(ast, {
         enter: function(node, parent) {
-
+            // Si el nodo es de tipo AssignmentExpression, su hijo izquierdo es de 
+            // tipo MemberExpression, y el memeber exrpression tiene como property un
+            // SequenceExpression nos econtramos ante un AST que representa codigo de
+            // la forma 'arr[1,2,3,4] = y' por lo que podemos realizar al transformacion
+            // de codigo correspondiente, llamando a la funcion changeToMultiAsign
             if (node.type === 'AssignmentExpression') {
                 if (node.left.type === "MemberExpression" && node.left.property.type === "SequenceExpression") {
                     return changeToMultiAsign(node);
                 }
             }
-
+            // TODO - Sacar el comportamiento de generar el AST correspondiente al new Date.UTC a una funcion y llamarla desde aca
+            // Si el Nodo es de tipo Literal, y el valor es un array, nos encontramos 
+            // ante un tipo date.El que el value sea de tipo array es una caracteristica
+            // agregada en el plugin datePlugin. Estando en un nodo de estas caracteristicas 
+            // se puede modificar el AST para que se cambie el nodo por uno correspondiente 
+            // a la creacion de un tipo Date.UTC
             if (node.type === 'Literal' && node.value instanceof Array) {
-                // console.log(util.inspect(dateUTCTemplate(), false, null, true));
                 let date = dateUTCTemplate();
                 date.arguments[0].arguments = [];
                 node.value.forEach(element => {
@@ -102,24 +140,44 @@ const ASTworker = (ast) => {
 
         },
         leave: function(node, parent) {
+            // FunctionDeclaration unicamente se da cuando se encuentra 
+            // la definicion de una funcion no asignada. Por lo que si 
+            // nos encontramos con un nodo de este tipo se debe alterar 
+            // el AST para que se mantenga la estructura y nombre de la 
+            // funcion pero asignado a una constante del mismo nombre.
+            // Esto se realiza con la funcion changeToConstFunction
             if (node.type === 'FunctionDeclaration') {
-                // console.log(node);
                 let n = changeToConstFunction(node);
-                // console.log(n);
                 return n;
             }
 
+            // SequenceExpression se da cuando se encuentra un operador 
+            // coma(Existen otros cados, que son eliminados en la funcion 
+            // Enter) Cuando se encuentra un nodo se tipo SequenceExpression, 
+            // es decir un operador coma, se elvant aun SyntaxError
             if (node.type === 'SequenceExpression') {
                 throw new SyntaxError(`Comma operation\n${util.inspect(node.loc, false, null, true)}`)
             }
 
+            // Cuando se abandona un nodo de tipo VariableDeclaration existen varias 
+            // consideraciones.
             if (node.type === 'VariableDeclaration') {
+
+                // Si el tipo de declaracion es let, se levanda una SyntaxError, ya que 
+                // OneScript no permite el uso de let 
                 if (node.kind === 'let') {
                     throw new SyntaxError(`Let is not a recognized keyword. \n${util.inspect(node.loc, false, null, true)}`)
                 }
+                // Si existe mas de una declaracion es que se intenta declarar varias 
+                // variables con el mismo var.Esto corresponde a otro uso del operador 
+                // coma, por lo que se levanta un SyntaxError
                 if (node.declarations.length > 1) {
                     throw new SyntaxError(`Cannot declare multiple variables or constants in a single expression\n${util.inspect(node.loc, false, null, true)}`)
                 }
+
+                // Si el el tipo es var, se cambia el tipo a let, a modo que en el AST 
+                // resultante, el correspondiente a JS todas las declaraciones de 
+                // variables sean con let en lugar de var
                 if (node.kind === 'var') {
                     return {...node, kind: 'let' }
                 }
@@ -132,14 +190,7 @@ const ASTworker = (ast) => {
 
 
 code = `
-    var y = 2020.10.24;;
-    var x = 1050.40.60t30.40;;
-    var z = 2020.10.40t10 + 2000.10.40t10;;
-    var x = 1;
-    x[1,2,3] = 3;
-    function f(){
-        return 1;
-    }`
+    var x =1, z =2;`
 let parsed = p.parse(code, {
     locations: true,
     ecmaVersion: 2020,
@@ -148,7 +199,10 @@ let parsed = p.parse(code, {
 // console.log(util.inspect(parsed, false, null, true));
 console.log(cg.generate(ASTworker(parsed)))
 
+// TODO - crear un archivo 1sc.js que funcione como wraper de este modulo. 
+// Tiene que procesar las opciones, crear el modulo npm y llamar a este modulo
 
+// TODO - Agregar Winston para loguear
 module.exports = {
     ASTworker: ASTworker,
 };
