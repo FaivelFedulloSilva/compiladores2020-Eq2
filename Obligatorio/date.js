@@ -7,42 +7,10 @@ const isIdentifierStart = acorn.isIdentifierStart
 module.exports = function(Parser) {
     return class extends Parser {
         parseLiteral(value) {
-                const node = super.parseLiteral(value)
-                if (node.raw.charCodeAt(node.raw.length - 1) == 110) node.bigint = this.getNumberInput(node.start, node.end - 1)
-                return node
-            }
-            // parseReturnStatement(node) {
-            //         if (!this.inFunction && !this.options.allowReturnOutsideFunction)
-            //             this.raise(this.start, "'return' outside of function")
-            //         this.next()
-
-        //         // In `return` (and `break`/`continue`), the keywords with
-        //         // optional arguments, we eagerly look for a semicolon or the
-        //         // possibility to insert one.
-
-        //         if (this.eat(tt.semi, 'Return') || this.insertSemicolon()) node.argument = null
-        //         else {
-        //             node.argument = this.parseExpression();
-        //             this.semicolon()
-        //         }
-        //         return this.finishNode(node, "ReturnStatement")
-        //     }
-        // eat(type, parentNode = null) {
-        //     if (type === tt.semi && parentNode !== 'Return') {
-        //         if (this.type === type) {
-        //             this.next()
-        //             return true
-        //         } else {
-        //             throw new Error('Lack of semicolon', this.pos)
-        //         }
-        //     }
-        //     if (this.type === type) {
-        //         this.next()
-        //         return true
-        //     } else {
-        //         return false
-        //     }
-        // }
+            const node = super.parseLiteral(value)
+            if (node.raw.charCodeAt(node.raw.length - 1) == 110) node.bigint = this.getNumberInput(node.start, node.end - 1)
+            return node
+        }
 
         readNumber(startsWithDot) {
             let str;

@@ -79,15 +79,6 @@ function changeToMultiAsign(AExpNode) {
     return result;
 }
 
-
-
-
-
-
-
-
-
-
 // Funcion principal a exportar. Dado un AST lo recorre y realiza las
 // modificaciones de codigo necesarias. El AST se recorre de manera 
 // automatica con la libreria estraverse, la cual toma como parametros

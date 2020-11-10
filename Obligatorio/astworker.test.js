@@ -63,6 +63,9 @@ test('Replace date literal', () => {
     var w = 2020.20.20t20;;
     var t = 2020.20.20t20.20;;
     var d = 2020.20.20t20.20.20;;
+    var w = 2020.20.20T20;;
+    var t = 2020.20.20T20.20;;
+    var d = 2020.20.20T20.20.20;;
     `, null).replace(/\s/g, '')).toMatch(`
     let x = new Date(Date.UTC(2020,20,20,20,20,20,20));
     let y = new Date(Date.UTC(2020,20,20,20,20,20,20));

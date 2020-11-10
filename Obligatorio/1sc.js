@@ -48,7 +48,7 @@ const compiler = async(source, output, optimization, log) => {
         try {
             readline.promptLoop(function(input) {
                 lines.push(input)
-                return input === 'X';
+                return input.length === 0;
             });
             logMessages['successfulLoad'](logger);
             logMessages['startCompilation'](logger);
@@ -86,4 +86,5 @@ const compiler = async(source, output, optimization, log) => {
     logMessages['allEnd'](logger);
 }
 
-compiler(source, output, optimization, log)
+
+compiler(source, output, optimization, log).catch((error) => console.error(error.message))
