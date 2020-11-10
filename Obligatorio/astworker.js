@@ -5,8 +5,6 @@ const cg = require('escodegen');
 const estools = require('estools');
 const estraverse = require('estraverse');
 const winston = require('winston');
-const chalk = require('chalk')
-const colors = require('colors/safe')
 
 // Genera el AST correspondiente a la asignacion de una funcion con 
 // nombre a una constante del mismo nombre. Luego se utilizara como 
@@ -157,9 +155,7 @@ const worker = (ast, logger) => {
             // Enter) Cuando se encuentra un nodo se tipo SequenceExpression, 
             // es decir un operador coma, se elvant aun SyntaxError
             if (node.type === 'SequenceExpression') {
-                let commaOperationError = new SyntaxError(`Comma operation (${node.loc.start.line}, ${node.loc.start.column})`);
-                logger ? logger.error(commaOperationError.message) : null;
-                throw commaOperationError
+                throw new SyntaxError(`Comma operation (${node.loc.start.line}, ${node.loc.start.column})`);
             }
 
             // Cuando se abandona un nodo de tipo VariableDeclaration existen varias 
@@ -169,17 +165,13 @@ const worker = (ast, logger) => {
                 // Si el tipo de declaracion es let, se levanda una SyntaxError, ya que 
                 // OneScript no permite el uso de let 
                 if (node.kind === 'let') {
-                    let letError = new SyntaxError(`Let is not a recognized keyword. (${node.loc.start.line}, ${node.loc.start.column})`);
-                    logger ? logger.error(letError.message) : null;
-                    throw letError
+                    throw new SyntaxError(`Let is not a recognized keyword. (${node.loc.start.line}, ${node.loc.start.column})`);
                 }
                 // Si existe mas de una declaracion es que se intenta declarar varias 
                 // variables con el mismo var.Esto corresponde a otro uso del operador 
                 // coma, por lo que se levanta un SyntaxError
                 if (node.declarations.length > 1) {
-                    let multiVarError = new SyntaxError(`Cannot declare multiple variables or constants in a single expression. (${node.loc.start.line}, ${node.loc.start.column})`);
-                    logger ? logger.error(multiVarError.message) : null;
-                    throw multiVarError
+                    throw new SyntaxError(`Cannot declare multiple variables or constants in a single expression. (${node.loc.start.line}, ${node.loc.start.column})`);
                 }
 
                 // Si el el tipo es var, se cambia el tipo a let, a modo que en el AST 
@@ -198,21 +190,7 @@ const worker = (ast, logger) => {
     return result;
 }
 
-const ASTworker = (code, logFile) => {
-    let logger = null;
-    const myformat = winston.format.combine(
-        winston.format.timestamp(),
-        winston.format.align(),
-        winston.format.printf(info => `${info.timestamp} \t${info.level}: \t${info.message}`)
-    );
-    if (logFile) {
-        logger = winston.createLogger({
-            transports: [
-                new winston.transports.File({ filename: logFile + '.log', level: 'info', format: myformat })
-            ]
-        });
-    }
-
+const ASTworker = (code, logger) => {
     // datePlugin es lo que se importa de date. Es el plugin que permite a 
     // acorn reconocer el literal date
     const p = acorn.Parser.extend(datePlugin);
@@ -221,9 +199,7 @@ const ASTworker = (code, logFile) => {
         locations: true,
         ecmaVersion: 2020,
         onInsertedSemicolon: (pos, loc) => {
-            let lackOfSemmicolonError = new SyntaxError(`Lack of semicolon(${loc.line}, ${loc.column})`);
-            logger ? logger.error(lackOfSemmicolonError.message) : null;
-            throw lackOfSemmicolonError;
+            throw new SyntaxError(`Lack of semicolon(${loc.line}, ${loc.column})`);
         }
     });
     logger.info('The code has been successfully parsed')
