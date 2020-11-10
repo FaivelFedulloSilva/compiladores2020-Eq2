@@ -48,7 +48,7 @@ module.exports = function(Parser) {
                 console.log(str)
                 dateArray = str.split('.')
                 val = dateArray;
-                ++this.pos
+                // ++this.pos
                 return this.finishToken(tt.string, val)
             } else {
                 ++this.pos;
@@ -58,7 +58,8 @@ module.exports = function(Parser) {
                     console.log(str)
                     dateArray = str.split(/[.tT]/)
                     val = dateArray;
-                    ++this.pos
+                    // console.log('--------->', val)
+                    // ++this.pos
                     return this.finishToken(tt.num, val)
                 } else {
                     ++this.pos;
@@ -68,7 +69,7 @@ module.exports = function(Parser) {
                         console.log(str)
                         dateArray = str.split(/[.tT]/)
                         val = dateArray;
-                        ++this.pos
+                        // ++this.pos
                         return this.finishToken(tt.num, val)
                     } else {
                         ++this.pos;
@@ -78,7 +79,7 @@ module.exports = function(Parser) {
                             console.log(str)
                             dateArray = str.split(/[.tT]/)
                             val = dateArray;
-                            ++this.pos
+                            // ++this.pos
                             return this.finishToken(tt.num, val)
                         } else {
                             ++this.pos;
@@ -88,7 +89,7 @@ module.exports = function(Parser) {
                                 console.log(str)
                                 dateArray = str.split(/[.tT]/)
                                 val = dateArray;
-                                ++this.pos
+                                // ++this.pos
                                 return this.finishToken(tt.num, val)
                             }
                         }
