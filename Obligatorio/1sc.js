@@ -1,7 +1,7 @@
 const yargs = require('yargs');
 const { ASTworker } = require('./astworker');
 const fs = require('fs');
-const readline = require('readline');
+const readline = require('readline-sync');
 const { minify } = require('terser');
 const winston = require('winston');
 const { createLog, logMessages } = require('./logMessages');
@@ -44,20 +44,22 @@ const compiler = async(source, output, optimization, log) => {
 
     } else {
         logMessages['sourceNotProvided'](logger);
-        var rl = readline.createInterface(
-            process.stdin, process.stdout);
-        rl.question('Writedown your OneScript code: \n', (code) => {
-            try {
-                logMessages['successfulLoad'](logger);
-                logMessages['startCompilation'](logger);
-                compiledCode = ASTworker(code, logger);
-                logMessages['endCompilation'](logger);
-            } catch (error) {
-                logger ? logger.error(error.message) : null;
-                throw error
-            }
-            rl.close();
-        })
+        let lines = [];
+        try {
+            readline.promptLoop(function(input) {
+                lines.push(input)
+                return input === 'X';
+            });
+            logMessages['successfulLoad'](logger);
+            logMessages['startCompilation'](logger);
+            let code = lines.join('\n');
+            compiledCode = ASTworker(code.slice(0, code.length - 1), logger);
+            logMessages['endCompilation'](logger);
+        } catch (error) {
+            logger ? logger.error(error.message) : null;
+            throw error
+        }
+
     }
 
     if (optimization && optimization.toLowerCase() === 'on') {
