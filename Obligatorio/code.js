@@ -1,3 +1,1 @@
-const g = function g(x, y) {
-    x[3] = x[2] = x[1] = y;
-};
+const g=function(n,c){n[3]=n[2]=n[1]=c};
