@@ -4,6 +4,7 @@ const fs = require('fs');
 const readline = require('readline');
 const { minify } = require('terser');
 const winston = require('winston');
+const { createLog, logMessages } = require('./logMessages');
 
 
 // console.log(yargs.argv)
@@ -17,24 +18,11 @@ let compiledCode;
 
 
 const compiler = async(source, output, optimization, log) => {
-    let logger = null;
-    const myformat = winston.format.combine(
-        winston.format.timestamp(),
-        winston.format.align(),
-        winston.format.printf(info => `${info.timestamp} \t${info.level}: \t${info.message}`)
-    );
-    if (log) {
-        logger = winston.createLogger({
-            transports: [
-                new winston.transports.File({ filename: log + '.log', level: 'info', format: myformat })
-            ]
-        });
-    }
+    let logger = createLog(log);
 
+    logMessages['allStart'](logger);
     if (source) {
-        logger ?
-            logger.info(`A source file has been provided. The code to be compiled can be found in ${source}`) :
-            null;
+        logMessages['sourceProvided'](logger, source);
         let path = source;
         let pathExtension = path.split('.')
         if (pathExtension[pathExtension.length - 1] !== '1s') {
@@ -45,39 +33,25 @@ const compiler = async(source, output, optimization, log) => {
         let code;
         try {
             code = fs.readFileSync(path, { encoding: 'utf8', flag: 'r' })
-            logger ?
-                logger.info(`The code has been succesfully load`) :
-                null;
-            logger ?
-                logger.info(`The compilation process is starting`) :
-                null;
+            logMessages['successfulLoad'](logger);
+            logMessages['startCompilation'](logger);
             compiledCode = ASTworker(code, logger);
-            logger ?
-                logger.info(`The compilation process has ended`) :
-                null;
+            logMessages['endCompilation'](logger);
         } catch (error) {
             logger ? logger.error(error.message) : null;
             throw error
         }
 
     } else {
-        logger ?
-            logger.info(`No source file has been provided. The code will be ask through the console`) :
-            null;
+        logMessages['sourceNotProvided'](logger);
         var rl = readline.createInterface(
             process.stdin, process.stdout);
         rl.question('Writedown your OneScript code: \n', (code) => {
             try {
-                logger ?
-                    logger.info(`The code has been succesfully load`) :
-                    null;
-                logger ?
-                    logger.info(`The compilation process is starting`) :
-                    null;
+                logMessages['successfulLoad'](logger);
+                logMessages['startCompilation'](logger);
                 compiledCode = ASTworker(code, logger);
-                logger ?
-                    logger.info(`The compilation process has ended`) :
-                    null;
+                logMessages['endCompilation'](logger);
             } catch (error) {
                 logger ? logger.error(error.message) : null;
                 throw error
@@ -87,47 +61,27 @@ const compiler = async(source, output, optimization, log) => {
     }
 
     if (optimization && optimization.toLowerCase() === 'on') {
-        logger ?
-            logger.info(`--log option has been provided with ON data.`) :
-            null;
-        logger ?
-            logger.info(`Optimisation and minification proccess will start`) :
-            null;
+        logMessages['optimizationEnable'](logger);
+        logMessages['optimizationStart'](logger);
         compiledCode = await minify(compiledCode);
         compiledCode = compiledCode['code']
-        logger ?
-            logger.info(`Optimization and minification process has ended`) :
-            null;
+        logMessages['optimizationEnd'](logger);
     } else {
-        logger ?
-            logger.info(`--log option has been provided with OFF data or has not been provided.`) :
-            null;
-        logger ?
-            logger.info(`Optimization and minification process will not be performed.`) :
-            null;
+        logMessages['optimizationDisbale'](logger);
+        logMessages['optimizationNotPerform'](logger);
     }
 
 
     if (output) {
-        logger ?
-            logger.info(`An output file has been provided. Compiled code will be save in ${output}`) :
-            null;
+        logMessages['outputProvided'](logger);
         fs.writeFileSync(output, compiledCode)
-        logger ?
-            logger.info(`The compiled code has been loaded into ${output}.`) :
-            null;
+        logMessages['outputFileSuccess'](logger, output);
     } else {
-        logger ?
-            logger.info(`No output file has been provided. Compiled code will be return throgh standard output`) :
-            null;
+        logMessages['outputNotProvided'](logger);
         console.log('The compiled result of your code into JavaScript is: \n', compiledCode)
-        logger ?
-            logger.info(`The compiled code has been loaded into Standard Output`) :
-            null;
+        logMessages['outputConsoleSuccess'](logger);
     }
-    logger ?
-        logger.info(`All proccess has ended without errors`) :
-        null;
+    logMessages['allEnd'](logger);
 }
 
 compiler(source, output, optimization, log)

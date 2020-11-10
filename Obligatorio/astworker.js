@@ -1,10 +1,8 @@
 const acorn = require("acorn");
 const datePlugin = require("./date");
-const util = require("util");
 const cg = require('escodegen');
-const estools = require('estools');
 const estraverse = require('estraverse');
-const winston = require('winston');
+const { logMessages } = require('./logMessages');
 
 // Genera el AST correspondiente a la asignacion de una funcion con 
 // nombre a una constante del mismo nombre. Luego se utilizara como 
@@ -112,7 +110,7 @@ const worker = (ast, logger) => {
             if (node.type === 'AssignmentExpression') {
                 if (node.left.type === "MemberExpression" && node.left.property.type === "SequenceExpression") {
                     let newNode = changeToMultiAsign(node)
-                    logger.info(`A array multiassign expresison has been found. The code has been changed to an assign seqeunce. \n\t----- ${cg.generate(node)}  \n\t+++++ ${cg.generate(newNode)}`)
+                    logMessages['changeToMultiAssign'](logger, node, newNode);
                     return newNode;
                 }
             }
@@ -132,7 +130,7 @@ const worker = (ast, logger) => {
                         raw: `${element}`
                     })
                 });
-                logger.info(`A date literal has been found and it has been converted into a Date object. \n\t----- ${node.raw}\n\t+++++ ${cg.generate(date)}`)
+                logMessages['dateLiteral'](logger, node, date);
                 return date;
             }
 
@@ -146,7 +144,7 @@ const worker = (ast, logger) => {
             // Esto se realiza con la funcion changeToConstFunction
             if (node.type === 'FunctionDeclaration') {
                 let constFunction = changeToConstFunction(node);
-                logger.info(`A function in statement contex has been found. It has been assign into a constant with the same name. \n\t----- \n${cg.generate(node)}  \n\t+++++ \n${cg.generate(constFunction)}`)
+                logMessages['functionAsignment'](logger, node, constFunction);
                 return constFunction;
             }
 
@@ -179,8 +177,7 @@ const worker = (ast, logger) => {
                 // variables sean con let en lugar de var
                 if (node.kind === 'var') {
                     let letNode = {...node, kind: 'let' }
-                    logger.info(`A var declarator has been found and it has been converted into a let declarator. \n\t----- ${cg.generate(node)}\n\t+++++ ${cg.generate(letNode)}`)
-
+                    logMessages['varToLet'](logger, node, letNode);
                     return letNode
                 }
             }
@@ -194,7 +191,8 @@ const ASTworker = (code, logger) => {
     // datePlugin es lo que se importa de date. Es el plugin que permite a 
     // acorn reconocer el literal date
     const p = acorn.Parser.extend(datePlugin);
-    logger.info('The parser has been extended to support date literals');
+    logMessages['extendParser'](logger);
+    logMessages['parseStart'](logger)
     let parsed = p.parse(code, {
         locations: true,
         ecmaVersion: 2020,
@@ -202,7 +200,7 @@ const ASTworker = (code, logger) => {
             throw new SyntaxError(`Lack of semicolon(${loc.line}, ${loc.column})`);
         }
     });
-    logger.info('The code has been successfully parsed')
+    logMessages['parseEnd'](logger);
     return cg.generate(worker(parsed, logger))
 }
 
