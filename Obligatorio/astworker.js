@@ -4,11 +4,6 @@ const util = require("util");
 const cg = require('escodegen');
 const estools = require('estools');
 const estraverse = require('estraverse');
-const fs = require('fs');
-
-// datePlugin es lo que se importa de date. Es el plugin que permite a 
-// acorn reconocer el literal date
-const p = acorn.Parser.extend(datePlugin);
 
 // Genera el AST correspondiente a la asignacion de una funcion con 
 // nombre a una constante del mismo nombre. Luego se utilizara como 
@@ -94,7 +89,7 @@ function changeToMultiAsign(AExpNode) {
 
 
 
-// Funcion principal a exportar.Dado un AST lo recorre y realiza las
+// Funcion principal a exportar. Dado un AST lo recorre y realiza las
 // modificaciones de codigo necesarias. El AST se recorre de manera 
 // automatica con la libreria estraverse, la cual toma como parametros
 // el AST y un objeto con dos funciones, enter y leave.La funcion enter
@@ -105,7 +100,7 @@ function changeToMultiAsign(AExpNode) {
 // de las dos funciones, si no se devuelve nada, el nodo visitado no se
 // modifica.Por otro lado si se retorna un nodo, modificado o no, el
 // nodo siendo visitado es reemplazado por el nodo retornado
-const ASTworker = (ast) => {
+const worker = (ast) => {
     result = estraverse.replace(ast, {
         enter: function(node, parent) {
             // Si el nodo es de tipo AssignmentExpression, su hijo izquierdo es de 
@@ -187,21 +182,30 @@ const ASTworker = (ast) => {
     return result;
 }
 
+const ASTworker = (code) => {
+    // datePlugin es lo que se importa de date. Es el plugin que permite a 
+    // acorn reconocer el literal date
+    const p = acorn.Parser.extend(datePlugin);
+    // console.log(code)
+    let parsed = p.parse(code, {
+        locations: true,
+        ecmaVersion: 2020,
+        onInsertedSemicolon: (pos, loc) => {
+            throw new SyntaxError(`Lack of semicolon($ { loc.line }, $ { loc.column })`)
+        }
+    });
+    return cg.generate(worker(parsed))
+}
+
 
 // code = `
-
+// var x = ∞;
 // `
-
-// let parsed = p.parse(code, {
-//     locations: true,
-//     ecmaVersion: 2020,
-//     onInsertedSemicolon: (pos, loc) => { throw new SyntaxError(`
-// Lack of semicolon($ { loc.line }, $ { loc.column })
-// `) }
-// });
 // console.log(util.inspect(parsed, false, null, true));
 // console.log(cg.generate(ASTworker(parsed)))
 
+// console.log(ASTworker(`
+// `))
 // TODO - crear un archivo 1sc.js que funcione como wraper de este modulo. 
 // Tiene que procesar las opciones, crear el modulo npm y llamar a este modulo
 
