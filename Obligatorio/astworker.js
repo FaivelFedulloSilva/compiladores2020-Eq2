@@ -206,10 +206,11 @@ const ASTworker = (code, logger) => {
 
 
 // code = `
-// var x = ∞;
+// var x = [1,2,3,4];
+// x[1,2,3] = 1;
 // `
-// console.log(util.inspect(parsed, false, null, true));
-// console.log(cg.generate(ASTworker(parsed)))
+//     // console.log(util.inspect(parsed, false, null, true));
+// console.log(ASTworker(code, null))
 
 // console.log(ASTworker(`
 // `))
