@@ -4,6 +4,9 @@ const util = require("util");
 const cg = require('escodegen');
 const estools = require('estools');
 const estraverse = require('estraverse');
+const winston = require('winston');
+const chalk = require('chalk')
+const colors = require('colors/safe')
 
 // Genera el AST correspondiente a la asignacion de una funcion con 
 // nombre a una constante del mismo nombre. Luego se utilizara como 
@@ -100,9 +103,9 @@ function changeToMultiAsign(AExpNode) {
 // de las dos funciones, si no se devuelve nada, el nodo visitado no se
 // modifica.Por otro lado si se retorna un nodo, modificado o no, el
 // nodo siendo visitado es reemplazado por el nodo retornado
-const worker = (ast) => {
+const worker = (ast, logger) => {
     result = estraverse.replace(ast, {
-        enter: function(node, parent) {
+        enter: function(node) {
             // Si el nodo es de tipo AssignmentExpression, su hijo izquierdo es de 
             // tipo MemberExpression, y el memeber exrpression tiene como property un
             // SequenceExpression nos econtramos ante un AST que representa codigo de
@@ -110,7 +113,9 @@ const worker = (ast) => {
             // de codigo correspondiente, llamando a la funcion changeToMultiAsign
             if (node.type === 'AssignmentExpression') {
                 if (node.left.type === "MemberExpression" && node.left.property.type === "SequenceExpression") {
-                    return changeToMultiAsign(node);
+                    let newNode = changeToMultiAsign(node)
+                    logger.info(`A array multiassign expresison has been found. The code has been changed to an assign seqeunce. \n\t----- ${cg.generate(node)}  \n\t+++++ ${cg.generate(newNode)}`)
+                    return newNode;
                 }
             }
             // TODO - Sacar el comportamiento de generar el AST correspondiente al new Date.UTC a una funcion y llamarla desde aca
@@ -129,6 +134,7 @@ const worker = (ast) => {
                         raw: `${element}`
                     })
                 });
+                logger.info(`A date literal has been found and it has been converted into a Date object. \n\t----- ${node.raw}\n\t+++++ ${cg.generate(date)}`)
                 return date;
             }
 
@@ -141,8 +147,9 @@ const worker = (ast) => {
             // funcion pero asignado a una constante del mismo nombre.
             // Esto se realiza con la funcion changeToConstFunction
             if (node.type === 'FunctionDeclaration') {
-                let n = changeToConstFunction(node);
-                return n;
+                let constFunction = changeToConstFunction(node);
+                logger.info(`A function in statement contex has been found. It has been assign into a constant with the same name. \n\t----- \n${cg.generate(node)}  \n\t+++++ \n${cg.generate(constFunction)}`)
+                return constFunction;
             }
 
             // SequenceExpression se da cuando se encuentra un operador 
@@ -150,7 +157,9 @@ const worker = (ast) => {
             // Enter) Cuando se encuentra un nodo se tipo SequenceExpression, 
             // es decir un operador coma, se elvant aun SyntaxError
             if (node.type === 'SequenceExpression') {
-                throw new SyntaxError(`Comma operation\n${util.inspect(node.loc, false, null, true)}`)
+                let commaOperationError = new SyntaxError(`Comma operation (${node.loc.start.line}, ${node.loc.start.column})`);
+                logger ? logger.error(commaOperationError.message) : null;
+                throw commaOperationError
             }
 
             // Cuando se abandona un nodo de tipo VariableDeclaration existen varias 
@@ -160,20 +169,27 @@ const worker = (ast) => {
                 // Si el tipo de declaracion es let, se levanda una SyntaxError, ya que 
                 // OneScript no permite el uso de let 
                 if (node.kind === 'let') {
-                    throw new SyntaxError(`Let is not a recognized keyword. \n${util.inspect(node.loc, false, null, true)}`)
+                    let letError = new SyntaxError(`Let is not a recognized keyword. (${node.loc.start.line}, ${node.loc.start.column})`);
+                    logger ? logger.error(letError.message) : null;
+                    throw letError
                 }
                 // Si existe mas de una declaracion es que se intenta declarar varias 
                 // variables con el mismo var.Esto corresponde a otro uso del operador 
                 // coma, por lo que se levanta un SyntaxError
                 if (node.declarations.length > 1) {
-                    throw new SyntaxError(`Cannot declare multiple variables or constants in a single expression\n${util.inspect(node.loc, false, null, true)}`)
+                    let multiVarError = new SyntaxError(`Cannot declare multiple variables or constants in a single expression. (${node.loc.start.line}, ${node.loc.start.column})`);
+                    logger ? logger.error(multiVarError.message) : null;
+                    throw multiVarError
                 }
 
                 // Si el el tipo es var, se cambia el tipo a let, a modo que en el AST 
                 // resultante, el correspondiente a JS todas las declaraciones de 
                 // variables sean con let en lugar de var
                 if (node.kind === 'var') {
-                    return {...node, kind: 'let' }
+                    let letNode = {...node, kind: 'let' }
+                    logger.info(`A var declarator has been found and it has been converted into a let declarator. \n\t----- ${cg.generate(node)}\n\t+++++ ${cg.generate(letNode)}`)
+
+                    return letNode
                 }
             }
         }
@@ -182,19 +198,36 @@ const worker = (ast) => {
     return result;
 }
 
-const ASTworker = (code) => {
+const ASTworker = (code, logFile) => {
+    let logger = null;
+    const myformat = winston.format.combine(
+        winston.format.timestamp(),
+        winston.format.align(),
+        winston.format.printf(info => `${info.timestamp} \t${info.level}: \t${info.message}`)
+    );
+    if (logFile) {
+        logger = winston.createLogger({
+            transports: [
+                new winston.transports.File({ filename: logFile + '.log', level: 'info', format: myformat })
+            ]
+        });
+    }
+
     // datePlugin es lo que se importa de date. Es el plugin que permite a 
     // acorn reconocer el literal date
     const p = acorn.Parser.extend(datePlugin);
-    // console.log(code)
+    logger.info('The parser has been extended to support date literals');
     let parsed = p.parse(code, {
         locations: true,
         ecmaVersion: 2020,
         onInsertedSemicolon: (pos, loc) => {
-            throw new SyntaxError(`Lack of semicolon($ { loc.line }, $ { loc.column })`)
+            let lackOfSemmicolonError = new SyntaxError(`Lack of semicolon(${loc.line}, ${loc.column})`);
+            logger ? logger.error(lackOfSemmicolonError.message) : null;
+            throw lackOfSemmicolonError;
         }
     });
-    return cg.generate(worker(parsed))
+    logger.info('The code has been successfully parsed')
+    return cg.generate(worker(parsed, logger))
 }
 
 

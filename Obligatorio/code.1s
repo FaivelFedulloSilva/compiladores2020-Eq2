@@ -1,1 +1,5 @@
-function g( x, y) {x[1,2,3] = y;}
+function g(x, y) {
+    x[1, 2, 3] = y;
+    var w = 1;
+    var z = 2020.10.24t4;;
+}

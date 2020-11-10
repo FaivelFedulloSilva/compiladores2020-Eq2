@@ -27,15 +27,20 @@ const compiler = async(source, output, optimization, log) => {
         let code;
         try {
             code = fs.readFileSync(path, { encoding: 'utf8', flag: 'r' })
+            compiledCode = ASTworker(code, log);
         } catch (error) {
             throw error
         }
-        compiledCode = ASTworker(code);
+
     } else {
         var rl = readline.createInterface(
             process.stdin, process.stdout);
         rl.question('Writedown your OneScript code: \n', (code) => {
-            compiledCode = ASTworker(code);
+            try {
+                compiledCode = ASTworker(code, log);
+            } catch (error) {
+                throw error
+            }
             rl.close();
         })
     }
