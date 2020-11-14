@@ -45,64 +45,46 @@ module.exports = function(Parser) {
             //Date without time
             if (this.input.charCodeAt(this.pos) != 84 && this.input.charCodeAt(this.pos) != 116) {
                 str = this.getNumberInput(start, this.pos)
-                console.log(str)
                 dateArray = str.split('.')
                 val = dateArray;
-                // ++this.pos
                 return this.finishToken(tt.string, val)
             } else {
                 ++this.pos;
                 if (this.readInt(10) === null) this.raise(start, "Invalid number")
                 if (this.input.charCodeAt(this.pos) != 46) {
                     str = this.getNumberInput(start, this.pos)
-                    console.log(str)
                     dateArray = str.split(/[.tT]/)
                     val = dateArray;
-                    // console.log('--------->', val)
-                    // ++this.pos
                     return this.finishToken(tt.num, val)
                 } else {
                     ++this.pos;
                     if (this.readInt(10) === null) this.raise(start, "Invalid number")
                     if (this.input.charCodeAt(this.pos) != 46) {
                         str = this.getNumberInput(start, this.pos)
-                        console.log(str)
                         dateArray = str.split(/[.tT]/)
                         val = dateArray;
-                        // ++this.pos
                         return this.finishToken(tt.num, val)
                     } else {
                         ++this.pos;
                         if (this.readInt(10) === null) this.raise(start, "Invalid number")
                         if (this.input.charCodeAt(this.pos) != 46) {
                             str = this.getNumberInput(start, this.pos)
-                            console.log(str)
                             dateArray = str.split(/[.tT]/)
                             val = dateArray;
-                            // ++this.pos
                             return this.finishToken(tt.num, val)
                         } else {
                             ++this.pos;
                             if (this.readInt(10) === null) this.raise(start, "Invalid number")
                             if (this.input.charCodeAt(this.pos) != 46) {
                                 str = this.getNumberInput(start, this.pos)
-                                console.log(str)
                                 dateArray = str.split(/[.tT]/)
                                 val = dateArray;
-                                // ++this.pos
                                 return this.finishToken(tt.num, val)
                             }
                         }
                     }
                 }
             }
-            // console.log('>>>>', this.input.charCodeAt(this.pos))
-            // str = this.getNumberInput(start, this.pos)
-            // console.log(str)
-            // dateArray = str.split('.')
-            // val = new Date(dateArray[0], dateArray[1], dateArray[2]);
-            // ++this.pos
-            // return this.finishToken(tt.num, val)
         }
 
         getNumberInput(start, end) {
