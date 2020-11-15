@@ -6,7 +6,9 @@ const { createLog, logMessages } = require('./logMessages');
 jest.mock('readline-sync');
 
 describe('compiler', () => {
-  const log = 'testlog';
+  const log = 'testlog.log';
+
+  afterAll(() => fs.unlinkSync(log))
 
   test('Should throw exception if source extention is not .1s', async () => {
     await expect(
