@@ -90,7 +90,7 @@ function changeToMultiAsign(AExpNode) {
 // de las dos funciones, si no se devuelve nada, el nodo visitado no se
 // modifica.Por otro lado si se retorna un nodo, modificado o no, el
 // nodo siendo visitado es reemplazado por el nodo retornado
-const worker = (ast, logger) => {
+const worker = (ast) => {
     result = estraverse.replace(ast, {
         enter: function(node) {
             // Si el nodo es de tipo AssignmentExpression, su hijo izquierdo es de 
@@ -101,7 +101,7 @@ const worker = (ast, logger) => {
             if (node.type === 'AssignmentExpression') {
                 if (node.left.type === "MemberExpression" && node.left.property.type === "SequenceExpression") {
                     let newNode = changeToMultiAsign(node)
-                    logMessages['changeToMultiAssign'](logger, node, newNode);
+                    logMessages.changeToMultiAssign(node, newNode);
                     return newNode;
                 }
             }
@@ -121,7 +121,7 @@ const worker = (ast, logger) => {
                         raw: `${element}`
                     })
                 });
-                logMessages['dateLiteral'](logger, node, date);
+                logMessages.dateLiteral(node, date);
                 return date;
             }
 
@@ -135,7 +135,7 @@ const worker = (ast, logger) => {
             // Esto se realiza con la funcion changeToConstFunction
             if (node.type === 'FunctionDeclaration') {
                 let constFunction = changeToConstFunction(node);
-                logMessages['functionAsignment'](logger, node, constFunction);
+                logMessages.functionAsignment(node, constFunction);
                 return constFunction;
             }
 
@@ -168,7 +168,7 @@ const worker = (ast, logger) => {
                 // variables sean con let en lugar de var
                 if (node.kind === 'var') {
                     let letNode = {...node, kind: 'let' }
-                    logMessages['varToLet'](logger, node, letNode);
+                    logMessages.varToLet(node, letNode);
                     return letNode
                 }
             }
@@ -178,12 +178,12 @@ const worker = (ast, logger) => {
     return result;
 }
 
-const ASTworker = (code, logger) => {
+const ASTworker = (code) => {
     // datePlugin es lo que se importa de date. Es el plugin que permite a 
     // acorn reconocer el literal date
     const p = acorn.Parser.extend(datePlugin);
-    logMessages['extendParser'](logger);
-    logMessages['parseStart'](logger)
+    logMessages.extendParser();
+    logMessages.parseStart();
     let parsed = p.parse(code, {
         locations: true,
         ecmaVersion: 2020,
@@ -191,8 +191,8 @@ const ASTworker = (code, logger) => {
             throw new SyntaxError(`Lack of semicolon(${loc.line}, ${loc.column})`);
         }
     });
-    logMessages['parseEnd'](logger);
-    return cg.generate(worker(parsed, logger))
+    logMessages.parseEnd();
+    return cg.generate(worker(parsed))
 }
 
 
