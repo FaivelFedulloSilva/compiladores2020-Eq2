@@ -1,6 +1,6 @@
 {
     "scripts": {
-        "test": "jest"
+        "test": "jest --coverage"
     },
     "dependencies": {
         "acorn": "^8.0.4",

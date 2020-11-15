@@ -5,7 +5,7 @@ const logger = winston.createLogger({
   transports: [],
 });
 
-const createLog = logFile => {
+const createLog = (logFile) => {
   if (logFile) {
     logger.silent = false;
     const myformat = winston.format.combine(
@@ -20,7 +20,7 @@ const createLog = logFile => {
       level: 'info',
       format: myformat,
     });
-    logger.clear().add(files)
+    logger.clear().add(files);
   }
 };
 

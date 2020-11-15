@@ -9,8 +9,6 @@ const p = acorn.Parser.extend(t);
 
 // TODO - Agregar mas test
 describe('ASTworker', () => {
-  const logger = createLog('testlog');
-
   test('Fail at let', () => {
       expect(() => {
           ASTworker("let x = 1;");
