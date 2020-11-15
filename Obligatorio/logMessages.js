@@ -2,10 +2,10 @@ const winston = require('winston');
 const cg = require('escodegen');
 
 const logger = winston.createLogger({
-  transports: [new winston.transports.Console()],
+  transports: [],
 });
 
-const createLog = (logFile) => {
+const createLog = logFile => {
   if (logFile) {
     logger.silent = false;
     const myformat = winston.format.combine(
@@ -15,15 +15,12 @@ const createLog = (logFile) => {
         (info) => `${info.timestamp} \t${info.level}: \t${info.message}`,
       ),
     );
-    // logger = winston.createLogger({
-    //   transports: [
-    //     new winston.transports.File({
-    //       filename: logFile + '.log',
-    //       level: 'info',
-    //       format: myformat,
-    //     }),
-    //   ],
-    // });
+    const files = new winston.transports.File({
+      filename: logFile,
+      level: 'info',
+      format: myformat,
+    });
+    logger.clear().add(files)
   }
 };
 
