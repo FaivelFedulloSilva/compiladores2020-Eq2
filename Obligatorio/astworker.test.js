@@ -7,7 +7,6 @@ const { createLog, logMessages } = require('./logMessages');
 
 const p = acorn.Parser.extend(t);
 
-// TODO - Agregar mas test
 describe('ASTworker', () => {
   test('Fail at let', () => {
       expect(() => {
@@ -26,8 +25,6 @@ describe('ASTworker', () => {
           ASTworker("var x = 1, y = 2;");
       }).toThrow(/Cannot declare multiple variables.*/);
   });
-
-  // test folder / name--coverage--collectCoverageFrom = 'folder/name/**/*.js'
 
   test('Replace by multiassign', () => {
       expect(ASTworker(`
