@@ -147,7 +147,7 @@ const worker = (ast) => {
 
       
       // TODO - Infinity
-      if (node.type === 'Literal' && node.value instanceof Array) {
+      if (node.type === 'Literal') {
         let infinity = infinityTemplate();
         node.type= 'Literal';
         node.value= parseInt(element);
@@ -217,7 +217,7 @@ const worker = (ast) => {
 const ASTworker = (code) => {
   // datePlugin es lo que se importa de date. Es el plugin que permite a
   // acorn reconocer el literal date
-  const p = acorn.Parser.extend(datePlugin);
+  const p = acorn.Parser.extend(datePlugin, infinityPlugin);
   logMessages.extendParser();
   logMessages.parseStart();
   let parsed = p.parse(code, {
