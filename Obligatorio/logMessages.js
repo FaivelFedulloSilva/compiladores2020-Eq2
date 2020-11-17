@@ -6,6 +6,7 @@ const logger = winston.createLogger({
 });
 
 const createLog = (logFile) => {
+  /* istanbul ignore next */
   if (logFile) {
     logger.silent = false;
     const myformat = winston.format.combine(

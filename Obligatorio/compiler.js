@@ -4,8 +4,10 @@ const { minify } = require('terser');
 const { ASTworker } = require('./astworker');
 const { createLog, logMessages } = require('./logMessages');
 
-module.exports = async ({ source, output, optimization, log }) => {
+async function main({ source, output, optimization, log }) {
   let compiledCode;
+
+  /* istanbul ignore next */
   if (log) {
     createLog(log);
   } else {
@@ -39,6 +41,7 @@ module.exports = async ({ source, output, optimization, log }) => {
     logMessages.sourceNotProvided();
     let lines = [];
     try {
+      /* istanbul ignore next */
       readline.promptLoop(function (input) {
         lines.push(input);
         return input.length === 0;
@@ -80,4 +83,6 @@ module.exports = async ({ source, output, optimization, log }) => {
   logMessages.allEnd();
 
   return compiledCode;
-};
+}
+
+module.exports = main;
