@@ -1,5 +1,6 @@
 const acorn = require('acorn');
 const datePlugin = require('./date');
+const infinityPlugin = require('./infinity');
 const cg = require('escodegen');
 const estraverse = require('estraverse');
 const { logMessages } = require('./logMessages');
@@ -30,8 +31,15 @@ const memberTamplate = function () {
 // Genera el AST correspondiente a la creacion de una fecha en formato
 // Date.UTC. Luego se utilizara para generar ASTs similares
 const dateUTCTemplate = function () {
-  let parsed = acorn.parse('new Date(Date.UTC(10,10))');
-  return parsed.body[0].expression;
+    let parsed = acorn.parse('new Date(Date.UTC(10,10))');
+    return parsed.body[0].expression;
+  };
+
+// Genera el AST correspondiente a la creacion de una fecha en formato
+// infinity. Luego se utilizara para generar ASTs similares
+const infinityTemplate = function () {
+    let parsed = acorn.parse('Infinity');
+    return parsed.body[0].expression;
 };
 
 // Esta funcion toma un nodo correspodiente a la definicion de una
@@ -136,6 +144,18 @@ const worker = (ast) => {
         logMessages.dateLiteral(node, date);
         return date;
       }
+
+      
+      // TODO - Infinity
+      if (node.type === 'Literal' && node.value instanceof Array) {
+        let infinity = infinityTemplate();
+        node.type= 'Literal';
+        node.value= parseInt(element);
+        
+        logMessages.infinityLiteral(node);
+        return infinity;
+      }
+
     },
     leave: function (node, parent) {
       // FunctionDeclaration unicamente se da cuando se encuentra
