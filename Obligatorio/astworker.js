@@ -136,6 +136,12 @@ const worker = (ast) => {
         logMessages.dateLiteral(node, date);
         return date;
       }
+<<<<<<< Updated upstream
+=======
+
+
+
+>>>>>>> Stashed changes
     },
     leave: function (node, parent) {
       // FunctionDeclaration unicamente se da cuando se encuentra
@@ -200,7 +206,7 @@ const ASTworker = (code) => {
   const p = acorn.Parser.extend(datePlugin);
   logMessages.extendParser();
   logMessages.parseStart();
-  let parsed = p.parse(code, {
+  let parsed = p.parse(code.replace('∞', 'Infinity'), {
     locations: true,
     ecmaVersion: 2020,
     onInsertedSemicolon: (pos, loc) => {
