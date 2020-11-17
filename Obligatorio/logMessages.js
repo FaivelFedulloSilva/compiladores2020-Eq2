@@ -2,7 +2,7 @@ const winston = require('winston');
 const cg = require('escodegen');
 
 const logger = winston.createLogger({
-  transports: [],
+  transports: [new winston.transports.Console()],
 });
 
 const createLog = (logFile) => {
