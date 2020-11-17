@@ -1,8 +1,10 @@
 const acorn = require('acorn');
 const datePlugin = require('./date');
+const infinityPlugin = require('./infinity');
 const cg = require('escodegen');
 const estraverse = require('estraverse');
 const { logMessages } = require('./logMessages');
+// const util = require('util')
 
 // Genera el AST correspondiente a la asignacion de una funcion con
 // nombre a una constante del mismo nombre. Luego se utilizara como
@@ -136,12 +138,6 @@ const worker = (ast) => {
         logMessages.dateLiteral(node, date);
         return date;
       }
-<<<<<<< Updated upstream
-=======
-
-
-
->>>>>>> Stashed changes
     },
     leave: function (node, parent) {
       // FunctionDeclaration unicamente se da cuando se encuentra
@@ -203,10 +199,10 @@ const worker = (ast) => {
 const ASTworker = (code) => {
   // datePlugin es lo que se importa de date. Es el plugin que permite a
   // acorn reconocer el literal date
-  const p = acorn.Parser.extend(datePlugin);
+  const p = acorn.Parser.extend(infinityPlugin,datePlugin);
   logMessages.extendParser();
   logMessages.parseStart();
-  let parsed = p.parse(code.replace('∞', 'Infinity'), {
+  let parsed = p.parse(code, {
     locations: true,
     ecmaVersion: 2020,
     onInsertedSemicolon: (pos, loc) => {

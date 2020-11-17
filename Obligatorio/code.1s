@@ -3,4 +3,5 @@ function g(x, y) {
     var w = 1;
     var z = 2020.10.24t4;
     var t = ∞;
+    console.log(t);
 }

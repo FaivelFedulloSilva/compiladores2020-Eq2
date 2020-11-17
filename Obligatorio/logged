@@ -1,0 +1,1354 @@
+2020-11-17T18:23:55.385Z 	info: 		The process has started.
+2020-11-17T18:23:55.387Z 	info: 		A source file has been provided. The code to be compiled can be found in code.1s
+2020-11-17T18:23:55.387Z 	info: 		The code has been succesfully load
+2020-11-17T18:23:55.387Z 	info: 		The compilation process is starting
+2020-11-17T18:23:55.387Z 	info: 		The parser has been extended to support date literals
+2020-11-17T18:23:55.388Z 	info: 		The parsing process has started
+2020-11-17T18:23:55.389Z 	info: 		The code has been successfully parsed
+2020-11-17T18:23:55.390Z 	info: 		The compilation process has ended
+2020-11-17T18:23:55.390Z 	info: 		--opt option has been provided with ON data.
+2020-11-17T18:23:55.390Z 	info: 		Optimisation and minification proccess will start
+2020-11-17T18:23:55.398Z 	info: 		Optimization and minification process has ended
+2020-11-17T18:23:55.398Z 	info: 		An output file has been provided. Compiled code will be save in undefined
+2020-11-17T18:23:55.399Z 	info: 		The compiled code has been loaded into code.js.
+2020-11-17T18:23:55.399Z 	info: 		All proccess has ended without errors
+2020-11-17T18:24:12.635Z 	info: 		The process has started.
+2020-11-17T18:24:12.636Z 	info: 		A source file has been provided. The code to be compiled can be found in code.1s
+2020-11-17T18:24:12.636Z 	info: 		The code has been succesfully load
+2020-11-17T18:24:12.636Z 	info: 		The compilation process is starting
+2020-11-17T18:24:12.636Z 	info: 		The parser has been extended to support date literals
+2020-11-17T18:24:12.636Z 	info: 		The parsing process has started
+2020-11-17T18:24:12.637Z 	info: 		The code has been successfully parsed
+2020-11-17T18:24:12.638Z 	info: 		The compilation process has ended
+2020-11-17T18:24:12.638Z 	info: 		--opt option has been provided with ON data.
+2020-11-17T18:24:12.639Z 	info: 		Optimisation and minification proccess will start
+2020-11-17T18:24:12.645Z 	info: 		Optimization and minification process has ended
+2020-11-17T18:24:12.645Z 	info: 		An output file has been provided. Compiled code will be save in undefined
+2020-11-17T18:24:12.645Z 	info: 		The compiled code has been loaded into code.js.
+2020-11-17T18:24:12.645Z 	info: 		All proccess has ended without errors
+2020-11-17T18:24:29.950Z 	info: 		The process has started.
+2020-11-17T18:24:29.951Z 	info: 		A source file has been provided. The code to be compiled can be found in code.1s
+2020-11-17T18:24:29.951Z 	info: 		The code has been succesfully load
+2020-11-17T18:24:29.951Z 	info: 		The compilation process is starting
+2020-11-17T18:24:29.951Z 	info: 		The parser has been extended to support date literals
+2020-11-17T18:24:29.951Z 	info: 		The parsing process has started
+2020-11-17T18:24:29.955Z 	info: 		The code has been successfully parsed
+2020-11-17T18:24:29.958Z 	info: 		A array multiassign expresison has been found. The code has been changed to an assign seqeunce. 
+	----- x[1, 2, 3] = y  
+	+++++ x[3] = x[2] = x[1] = y
+2020-11-17T18:24:29.958Z 	error: 		element is not defined
+2020-11-17T18:25:34.897Z 	info: 		The process has started.
+2020-11-17T18:25:34.898Z 	info: 		A source file has been provided. The code to be compiled can be found in code.1s
+2020-11-17T18:25:34.898Z 	info: 		The code has been succesfully load
+2020-11-17T18:25:34.898Z 	info: 		The compilation process is starting
+2020-11-17T18:25:34.898Z 	info: 		The parser has been extended to support date literals
+2020-11-17T18:25:34.898Z 	info: 		The parsing process has started
+2020-11-17T18:25:34.902Z 	info: 		The code has been successfully parsed
+2020-11-17T18:25:34.905Z 	info: 		A array multiassign expresison has been found. The code has been changed to an assign seqeunce. 
+	----- x[1, 2, 3] = y  
+	+++++ x[3] = x[2] = x[1] = y
+2020-11-17T18:25:34.905Z 	error: 		element is not defined
+2020-11-17T18:26:15.819Z 	info: 		The process has started.
+2020-11-17T18:26:15.820Z 	info: 		A source file has been provided. The code to be compiled can be found in code.1s
+2020-11-17T18:26:15.820Z 	info: 		The code has been succesfully load
+2020-11-17T18:26:15.820Z 	info: 		The compilation process is starting
+2020-11-17T18:26:15.820Z 	info: 		The parser has been extended to support date literals
+2020-11-17T18:26:15.821Z 	info: 		The parsing process has started
+2020-11-17T18:26:15.824Z 	info: 		The code has been successfully parsed
+2020-11-17T18:26:15.827Z 	info: 		A array multiassign expresison has been found. The code has been changed to an assign seqeunce. 
+	----- x[1, 2, 3] = y  
+	+++++ x[3] = x[2] = x[1] = y
+2020-11-17T18:26:15.828Z 	error: 		logMessages.infinityLiteral is not a function
+2020-11-17T18:26:54.918Z 	info: 		The process has started.
+2020-11-17T18:26:54.919Z 	info: 		A source file has been provided. The code to be compiled can be found in code.1s
+2020-11-17T18:26:54.919Z 	info: 		The code has been succesfully load
+2020-11-17T18:26:54.919Z 	info: 		The compilation process is starting
+2020-11-17T18:26:54.919Z 	info: 		The parser has been extended to support date literals
+2020-11-17T18:26:54.919Z 	info: 		The parsing process has started
+2020-11-17T18:26:54.923Z 	info: 		The code has been successfully parsed
+2020-11-17T18:26:54.927Z 	info: 		A array multiassign expresison has been found. The code has been changed to an assign seqeunce. 
+	----- x[1, 2, 3] = y  
+	+++++ x[3] = x[2] = x[1] = y
+2020-11-17T18:26:54.928Z 	info: 		A var declarator has been found and it has been converted into a let declarator. 
+	----- var w = Infinity;
+	+++++ let w = Infinity;
+2020-11-17T18:26:54.929Z 	info: 		A date literal has been found and it has been converted into a Date object. 
+	----- 2020.10.24t4
+	+++++ new Date(Date.UTC(2020, 10, 24, 4))
+2020-11-17T18:26:54.929Z 	info: 		A var declarator has been found and it has been converted into a let declarator. 
+	----- var z = new Date(Date.UTC(Infinity, Infinity, Infinity, Infinity));
+	+++++ let z = new Date(Date.UTC(Infinity, Infinity, Infinity, Infinity));
+2020-11-17T18:26:54.930Z 	info: 		A function in statement context has been found. It has been assign into a constant with the same name. 
+	----- 
+function g(x, y) {
+    x[Infinity] = x[Infinity] = x[Infinity] = y;
+    let w = Infinity;
+    let z = new Date(Date.UTC(Infinity, Infinity, Infinity, Infinity));
+}  
+	+++++ 
+const g = function g(x, y) {
+    x[Infinity] = x[Infinity] = x[Infinity] = y;
+    let w = Infinity;
+    let z = new Date(Date.UTC(Infinity, Infinity, Infinity, Infinity));
+};
+2020-11-17T18:26:54.930Z 	info: 		The compilation process has ended
+2020-11-17T18:26:54.930Z 	info: 		--opt option has been provided with ON data.
+2020-11-17T18:26:54.931Z 	info: 		Optimisation and minification proccess will start
+2020-11-17T18:26:54.952Z 	info: 		Optimization and minification process has ended
+2020-11-17T18:26:54.952Z 	info: 		An output file has been provided. Compiled code will be save in undefined
+2020-11-17T18:26:54.952Z 	info: 		The compiled code has been loaded into code.js.
+2020-11-17T18:26:54.952Z 	info: 		All proccess has ended without errors
+2020-11-17T18:27:04.817Z 	info: 		The process has started.
+2020-11-17T18:27:04.818Z 	info: 		A source file has been provided. The code to be compiled can be found in code.1s
+2020-11-17T18:27:04.818Z 	info: 		The code has been succesfully load
+2020-11-17T18:27:04.818Z 	info: 		The compilation process is starting
+2020-11-17T18:27:04.818Z 	info: 		The parser has been extended to support date literals
+2020-11-17T18:27:04.819Z 	info: 		The parsing process has started
+2020-11-17T18:27:04.823Z 	error: 		Invalid number (5:14)
+2020-11-17T18:27:20.928Z 	info: 		The process has started.
+2020-11-17T18:27:20.929Z 	info: 		A source file has been provided. The code to be compiled can be found in code.1s
+2020-11-17T18:27:20.929Z 	info: 		The code has been succesfully load
+2020-11-17T18:27:20.929Z 	info: 		The compilation process is starting
+2020-11-17T18:27:20.930Z 	info: 		The parser has been extended to support date literals
+2020-11-17T18:27:20.930Z 	info: 		The parsing process has started
+2020-11-17T18:27:20.931Z 	info: 		The code has been successfully parsed
+2020-11-17T18:27:20.932Z 	info: 		The compilation process has ended
+2020-11-17T18:27:20.932Z 	info: 		--opt option has been provided with ON data.
+2020-11-17T18:27:20.932Z 	info: 		Optimisation and minification proccess will start
+2020-11-17T18:27:20.937Z 	info: 		Optimization and minification process has ended
+2020-11-17T18:27:20.937Z 	info: 		An output file has been provided. Compiled code will be save in undefined
+2020-11-17T18:27:20.937Z 	info: 		The compiled code has been loaded into code.js.
+2020-11-17T18:27:20.937Z 	info: 		All proccess has ended without errors
+2020-11-17T18:27:43.653Z 	info: 		The process has started.
+2020-11-17T18:27:43.654Z 	info: 		A source file has been provided. The code to be compiled can be found in code.1s
+2020-11-17T18:27:43.654Z 	info: 		The code has been succesfully load
+2020-11-17T18:27:43.654Z 	info: 		The compilation process is starting
+2020-11-17T18:27:43.654Z 	info: 		The parser has been extended to support date literals
+2020-11-17T18:27:43.654Z 	info: 		The parsing process has started
+2020-11-17T18:27:43.655Z 	info: 		The code has been successfully parsed
+2020-11-17T18:27:43.656Z 	info: 		The compilation process has ended
+2020-11-17T18:27:43.656Z 	info: 		--opt option has been provided with ON data.
+2020-11-17T18:27:43.656Z 	info: 		Optimisation and minification proccess will start
+2020-11-17T18:27:43.662Z 	info: 		Optimization and minification process has ended
+2020-11-17T18:27:43.662Z 	info: 		An output file has been provided. Compiled code will be save in undefined
+2020-11-17T18:27:43.662Z 	info: 		The compiled code has been loaded into code.js.
+2020-11-17T18:27:43.662Z 	info: 		All proccess has ended without errors
+2020-11-17T18:28:01.351Z 	info: 		The process has started.
+2020-11-17T18:28:01.351Z 	info: 		A source file has been provided. The code to be compiled can be found in code.1s
+2020-11-17T18:28:01.352Z 	info: 		The code has been succesfully load
+2020-11-17T18:28:01.352Z 	info: 		The compilation process is starting
+2020-11-17T18:28:01.352Z 	info: 		The parser has been extended to support date literals
+2020-11-17T18:28:01.352Z 	info: 		The parsing process has started
+2020-11-17T18:28:01.353Z 	info: 		The code has been successfully parsed
+2020-11-17T18:28:01.354Z 	info: 		The compilation process has ended
+2020-11-17T18:28:01.354Z 	info: 		--opt option has been provided with ON data.
+2020-11-17T18:28:01.354Z 	info: 		Optimisation and minification proccess will start
+2020-11-17T18:28:01.360Z 	info: 		Optimization and minification process has ended
+2020-11-17T18:28:01.360Z 	info: 		An output file has been provided. Compiled code will be save in undefined
+2020-11-17T18:28:01.360Z 	info: 		The compiled code has been loaded into code.js.
+2020-11-17T18:28:01.360Z 	info: 		All proccess has ended without errors
+2020-11-17T18:28:15.564Z 	info: 		The process has started.
+2020-11-17T18:28:15.565Z 	info: 		A source file has been provided. The code to be compiled can be found in code.1s
+2020-11-17T18:28:15.565Z 	info: 		The code has been succesfully load
+2020-11-17T18:28:15.565Z 	info: 		The compilation process is starting
+2020-11-17T18:28:15.565Z 	info: 		The parser has been extended to support date literals
+2020-11-17T18:28:15.565Z 	info: 		The parsing process has started
+2020-11-17T18:28:15.570Z 	info: 		The code has been successfully parsed
+2020-11-17T18:28:15.573Z 	info: 		A array multiassign expresison has been found. The code has been changed to an assign seqeunce. 
+	----- x[1, 2, 3] = y  
+	+++++ x[3] = x[2] = x[1] = y
+2020-11-17T18:28:15.574Z 	info: 		A var declarator has been found and it has been converted into a let declarator. 
+	----- var w = Infinity;
+	+++++ let w = Infinity;
+2020-11-17T18:28:15.575Z 	info: 		A date literal has been found and it has been converted into a Date object. 
+	----- 2020.10.24t4
+	+++++ new Date(Date.UTC(2020, 10, 24, 4))
+2020-11-17T18:28:15.575Z 	info: 		A var declarator has been found and it has been converted into a let declarator. 
+	----- var z = new Date(Date.UTC(Infinity, Infinity, Infinity, Infinity));
+	+++++ let z = new Date(Date.UTC(Infinity, Infinity, Infinity, Infinity));
+2020-11-17T18:28:15.576Z 	info: 		A function in statement context has been found. It has been assign into a constant with the same name. 
+	----- 
+function g(x, y) {
+    x[Infinity] = x[Infinity] = x[Infinity] = y;
+    let w = Infinity;
+    let z = new Date(Date.UTC(Infinity, Infinity, Infinity, Infinity));
+}  
+	+++++ 
+const g = function g(x, y) {
+    x[Infinity] = x[Infinity] = x[Infinity] = y;
+    let w = Infinity;
+    let z = new Date(Date.UTC(Infinity, Infinity, Infinity, Infinity));
+};
+2020-11-17T18:28:15.576Z 	info: 		The compilation process has ended
+2020-11-17T18:28:15.576Z 	info: 		--opt option has been provided with ON data.
+2020-11-17T18:28:15.576Z 	info: 		Optimisation and minification proccess will start
+2020-11-17T18:28:15.593Z 	info: 		Optimization and minification process has ended
+2020-11-17T18:28:15.593Z 	info: 		An output file has been provided. Compiled code will be save in undefined
+2020-11-17T18:28:15.594Z 	info: 		The compiled code has been loaded into code.js.
+2020-11-17T18:28:15.594Z 	info: 		All proccess has ended without errors
+2020-11-17T18:28:37.052Z 	info: 		The process has started.
+2020-11-17T18:28:37.053Z 	info: 		A source file has been provided. The code to be compiled can be found in code.1s
+2020-11-17T18:28:37.053Z 	info: 		The code has been succesfully load
+2020-11-17T18:28:37.053Z 	info: 		The compilation process is starting
+2020-11-17T18:28:37.053Z 	info: 		The parser has been extended to support date literals
+2020-11-17T18:28:37.054Z 	info: 		The parsing process has started
+2020-11-17T18:28:37.055Z 	info: 		The code has been successfully parsed
+2020-11-17T18:28:37.055Z 	info: 		The compilation process has ended
+2020-11-17T18:28:37.055Z 	info: 		--opt option has been provided with ON data.
+2020-11-17T18:28:37.055Z 	info: 		Optimisation and minification proccess will start
+2020-11-17T18:28:37.062Z 	info: 		Optimization and minification process has ended
+2020-11-17T18:28:37.062Z 	info: 		An output file has been provided. Compiled code will be save in undefined
+2020-11-17T18:28:37.062Z 	info: 		The compiled code has been loaded into code.js.
+2020-11-17T18:28:37.062Z 	info: 		All proccess has ended without errors
+2020-11-17T18:30:17.153Z 	info: 		The process has started.
+2020-11-17T18:30:17.153Z 	info: 		A source file has been provided. The code to be compiled can be found in code.1s
+2020-11-17T18:30:17.154Z 	info: 		The code has been succesfully load
+2020-11-17T18:30:17.154Z 	info: 		The compilation process is starting
+2020-11-17T18:30:17.154Z 	info: 		The parser has been extended to support date literals
+2020-11-17T18:30:17.154Z 	info: 		The parsing process has started
+2020-11-17T18:30:17.155Z 	info: 		The code has been successfully parsed
+2020-11-17T18:30:17.156Z 	info: 		The compilation process has ended
+2020-11-17T18:30:17.156Z 	info: 		--opt option has been provided with ON data.
+2020-11-17T18:30:17.156Z 	info: 		Optimisation and minification proccess will start
+2020-11-17T18:30:17.162Z 	info: 		Optimization and minification process has ended
+2020-11-17T18:30:17.162Z 	info: 		An output file has been provided. Compiled code will be save in undefined
+2020-11-17T18:30:17.162Z 	info: 		The compiled code has been loaded into code.js.
+2020-11-17T18:30:17.162Z 	info: 		All proccess has ended without errors
+2020-11-17T18:30:32.859Z 	info: 		The process has started.
+2020-11-17T18:30:32.860Z 	info: 		A source file has been provided. The code to be compiled can be found in code.1s
+2020-11-17T18:30:32.860Z 	info: 		The code has been succesfully load
+2020-11-17T18:30:32.860Z 	info: 		The compilation process is starting
+2020-11-17T18:30:32.860Z 	info: 		The parser has been extended to support date literals
+2020-11-17T18:30:32.860Z 	info: 		The parsing process has started
+2020-11-17T18:30:32.862Z 	info: 		The code has been successfully parsed
+2020-11-17T18:30:32.863Z 	info: 		The compilation process has ended
+2020-11-17T18:30:32.863Z 	info: 		--opt option has been provided with ON data.
+2020-11-17T18:30:32.863Z 	info: 		Optimisation and minification proccess will start
+2020-11-17T18:30:32.870Z 	info: 		Optimization and minification process has ended
+2020-11-17T18:30:32.870Z 	info: 		An output file has been provided. Compiled code will be save in undefined
+2020-11-17T18:30:32.870Z 	info: 		The compiled code has been loaded into code.js.
+2020-11-17T18:30:32.870Z 	info: 		All proccess has ended without errors
+2020-11-17T18:30:59.461Z 	info: 		The process has started.
+2020-11-17T18:30:59.462Z 	info: 		A source file has been provided. The code to be compiled can be found in code.1s
+2020-11-17T18:30:59.462Z 	info: 		The code has been succesfully load
+2020-11-17T18:30:59.462Z 	info: 		The compilation process is starting
+2020-11-17T18:30:59.462Z 	info: 		The parser has been extended to support date literals
+2020-11-17T18:30:59.462Z 	info: 		The parsing process has started
+2020-11-17T18:30:59.465Z 	info: 		The code has been successfully parsed
+2020-11-17T18:30:59.466Z 	info: 		The compilation process has ended
+2020-11-17T18:30:59.466Z 	info: 		--opt option has been provided with ON data.
+2020-11-17T18:30:59.467Z 	info: 		Optimisation and minification proccess will start
+2020-11-17T18:30:59.473Z 	info: 		Optimization and minification process has ended
+2020-11-17T18:30:59.473Z 	info: 		An output file has been provided. Compiled code will be save in undefined
+2020-11-17T18:30:59.474Z 	info: 		The compiled code has been loaded into code.js.
+2020-11-17T18:30:59.474Z 	info: 		All proccess has ended without errors
+2020-11-17T18:31:10.180Z 	info: 		The process has started.
+2020-11-17T18:31:10.181Z 	info: 		A source file has been provided. The code to be compiled can be found in code.1s
+2020-11-17T18:31:10.181Z 	info: 		The code has been succesfully load
+2020-11-17T18:31:10.181Z 	info: 		The compilation process is starting
+2020-11-17T18:31:10.182Z 	info: 		The parser has been extended to support date literals
+2020-11-17T18:31:10.182Z 	info: 		The parsing process has started
+2020-11-17T18:31:10.186Z 	info: 		The code has been successfully parsed
+2020-11-17T18:31:10.187Z 	info: 		The compilation process has ended
+2020-11-17T18:31:10.187Z 	info: 		--opt option has been provided with ON data.
+2020-11-17T18:31:10.187Z 	info: 		Optimisation and minification proccess will start
+2020-11-17T18:31:10.194Z 	info: 		Optimization and minification process has ended
+2020-11-17T18:31:10.194Z 	info: 		An output file has been provided. Compiled code will be save in undefined
+2020-11-17T18:31:10.194Z 	info: 		The compiled code has been loaded into code.js.
+2020-11-17T18:31:10.194Z 	info: 		All proccess has ended without errors
+2020-11-17T18:31:27.673Z 	info: 		The process has started.
+2020-11-17T18:31:27.673Z 	info: 		A source file has been provided. The code to be compiled can be found in code.1s
+2020-11-17T18:31:27.673Z 	info: 		The code has been succesfully load
+2020-11-17T18:31:27.673Z 	info: 		The compilation process is starting
+2020-11-17T18:31:27.674Z 	info: 		The parser has been extended to support date literals
+2020-11-17T18:31:27.674Z 	info: 		The parsing process has started
+2020-11-17T18:31:27.684Z 	info: 		The code has been successfully parsed
+2020-11-17T18:31:27.686Z 	info: 		The compilation process has ended
+2020-11-17T18:31:27.686Z 	info: 		--opt option has been provided with ON data.
+2020-11-17T18:31:27.686Z 	info: 		Optimisation and minification proccess will start
+2020-11-17T18:31:27.693Z 	info: 		Optimization and minification process has ended
+2020-11-17T18:31:27.693Z 	info: 		An output file has been provided. Compiled code will be save in undefined
+2020-11-17T18:31:27.693Z 	info: 		The compiled code has been loaded into code.js.
+2020-11-17T18:31:27.693Z 	info: 		All proccess has ended without errors
+2020-11-17T19:01:50.119Z 	info: 		The process has started.
+2020-11-17T19:01:50.120Z 	info: 		A source file has been provided. The code to be compiled can be found in code.1s
+2020-11-17T19:01:50.120Z 	info: 		The code has been succesfully load
+2020-11-17T19:01:50.120Z 	info: 		The compilation process is starting
+2020-11-17T19:01:50.120Z 	info: 		The parser has been extended to support date literals
+2020-11-17T19:01:50.120Z 	info: 		The parsing process has started
+2020-11-17T19:01:50.127Z 	info: 		The code has been successfully parsed
+2020-11-17T19:01:50.128Z 	info: 		The compilation process has ended
+2020-11-17T19:01:50.128Z 	info: 		--opt option has been provided with ON data.
+2020-11-17T19:01:50.128Z 	info: 		Optimisation and minification proccess will start
+2020-11-17T19:01:50.135Z 	info: 		Optimization and minification process has ended
+2020-11-17T19:01:50.135Z 	info: 		An output file has been provided. Compiled code will be save in undefined
+2020-11-17T19:01:50.135Z 	info: 		The compiled code has been loaded into code.js.
+2020-11-17T19:01:50.135Z 	info: 		All proccess has ended without errors
+2020-11-17T19:02:19.577Z 	info: 		The process has started.
+2020-11-17T19:02:19.577Z 	info: 		A source file has been provided. The code to be compiled can be found in code.1s
+2020-11-17T19:02:19.577Z 	info: 		The code has been succesfully load
+2020-11-17T19:02:19.577Z 	info: 		The compilation process is starting
+2020-11-17T19:02:19.578Z 	info: 		The parser has been extended to support date literals
+2020-11-17T19:02:19.578Z 	info: 		The parsing process has started
+2020-11-17T19:02:19.582Z 	error: 		str is not defined
+2020-11-17T19:03:29.905Z 	info: 		The process has started.
+2020-11-17T19:03:29.906Z 	info: 		A source file has been provided. The code to be compiled can be found in code.1s
+2020-11-17T19:03:29.906Z 	info: 		The code has been succesfully load
+2020-11-17T19:03:29.906Z 	info: 		The compilation process is starting
+2020-11-17T19:03:29.906Z 	info: 		The parser has been extended to support date literals
+2020-11-17T19:03:29.906Z 	info: 		The parsing process has started
+2020-11-17T19:03:29.908Z 	error: 		str is not defined
+2020-11-17T19:03:59.758Z 	info: 		The process has started.
+2020-11-17T19:03:59.759Z 	info: 		A source file has been provided. The code to be compiled can be found in code.1s
+2020-11-17T19:03:59.759Z 	info: 		The code has been succesfully load
+2020-11-17T19:03:59.759Z 	info: 		The compilation process is starting
+2020-11-17T19:03:59.759Z 	info: 		The parser has been extended to support date literals
+2020-11-17T19:03:59.759Z 	info: 		The parsing process has started
+2020-11-17T19:03:59.761Z 	error: 		str is not defined
+2020-11-17T19:04:30.150Z 	info: 		The process has started.
+2020-11-17T19:04:30.151Z 	info: 		A source file has been provided. The code to be compiled can be found in code.1s
+2020-11-17T19:04:30.151Z 	info: 		The code has been succesfully load
+2020-11-17T19:04:30.151Z 	info: 		The compilation process is starting
+2020-11-17T19:04:30.151Z 	info: 		The parser has been extended to support date literals
+2020-11-17T19:04:30.151Z 	info: 		The parsing process has started
+2020-11-17T19:04:30.154Z 	error: 		Invalid number (1:2)
+2020-11-17T19:04:55.507Z 	info: 		The process has started.
+2020-11-17T19:04:55.508Z 	info: 		A source file has been provided. The code to be compiled can be found in code.1s
+2020-11-17T19:04:55.508Z 	info: 		The code has been succesfully load
+2020-11-17T19:04:55.508Z 	info: 		The compilation process is starting
+2020-11-17T19:04:55.508Z 	info: 		The parser has been extended to support date literals
+2020-11-17T19:04:55.508Z 	info: 		The parsing process has started
+2020-11-17T19:04:55.510Z 	error: 		Invalid number (1:2)
+2020-11-17T19:06:19.457Z 	info: 		The process has started.
+2020-11-17T19:06:19.458Z 	info: 		A source file has been provided. The code to be compiled can be found in code.1s
+2020-11-17T19:06:19.459Z 	info: 		The code has been succesfully load
+2020-11-17T19:06:19.459Z 	info: 		The compilation process is starting
+2020-11-17T19:06:19.459Z 	info: 		The parser has been extended to support date literals
+2020-11-17T19:06:19.459Z 	info: 		The parsing process has started
+2020-11-17T19:06:19.462Z 	error: 		Invalid number (1:2)
+2020-11-17T19:06:56.895Z 	info: 		The process has started.
+2020-11-17T19:06:56.896Z 	info: 		A source file has been provided. The code to be compiled can be found in code.1s
+2020-11-17T19:06:56.899Z 	info: 		The code has been succesfully load
+2020-11-17T19:06:56.899Z 	info: 		The compilation process is starting
+2020-11-17T19:06:56.899Z 	info: 		The parser has been extended to support date literals
+2020-11-17T19:06:56.899Z 	info: 		The parsing process has started
+2020-11-17T19:06:56.912Z 	error: 		Invalid number (1:3)
+2020-11-17T19:07:19.072Z 	info: 		The process has started.
+2020-11-17T19:07:19.073Z 	info: 		A source file has been provided. The code to be compiled can be found in code.1s
+2020-11-17T19:07:19.074Z 	info: 		The code has been succesfully load
+2020-11-17T19:07:19.074Z 	info: 		The compilation process is starting
+2020-11-17T19:07:19.074Z 	info: 		The parser has been extended to support date literals
+2020-11-17T19:07:19.074Z 	info: 		The parsing process has started
+2020-11-17T19:07:19.081Z 	error: 		Invalid number (1:3)
+2020-11-17T19:09:38.573Z 	info: 		The process has started.
+2020-11-17T19:09:38.573Z 	info: 		A source file has been provided. The code to be compiled can be found in code.1s
+2020-11-17T19:09:38.574Z 	info: 		The code has been succesfully load
+2020-11-17T19:09:38.574Z 	info: 		The compilation process is starting
+2020-11-17T19:09:38.574Z 	info: 		The parser has been extended to support date literals
+2020-11-17T19:09:38.575Z 	info: 		The parsing process has started
+2020-11-17T19:09:38.582Z 	error: 		Invalid number (1:3)
+2020-11-17T19:09:59.618Z 	info: 		The process has started.
+2020-11-17T19:09:59.619Z 	info: 		A source file has been provided. The code to be compiled can be found in code.1s
+2020-11-17T19:09:59.619Z 	info: 		The code has been succesfully load
+2020-11-17T19:09:59.619Z 	info: 		The compilation process is starting
+2020-11-17T19:09:59.619Z 	info: 		The parser has been extended to support date literals
+2020-11-17T19:09:59.619Z 	info: 		The parsing process has started
+2020-11-17T19:09:59.627Z 	error: 		Invalid number (1:3)
+2020-11-17T19:10:25.046Z 	info: 		The process has started.
+2020-11-17T19:10:25.046Z 	info: 		A source file has been provided. The code to be compiled can be found in code.1s
+2020-11-17T19:10:25.046Z 	info: 		The code has been succesfully load
+2020-11-17T19:10:25.046Z 	info: 		The compilation process is starting
+2020-11-17T19:10:25.047Z 	info: 		The parser has been extended to support date literals
+2020-11-17T19:10:25.047Z 	info: 		The parsing process has started
+2020-11-17T19:10:25.055Z 	error: 		Invalid number (1:3)
+2020-11-17T19:10:32.504Z 	info: 		The process has started.
+2020-11-17T19:10:32.505Z 	info: 		A source file has been provided. The code to be compiled can be found in code.1s
+2020-11-17T19:10:32.505Z 	info: 		The code has been succesfully load
+2020-11-17T19:10:32.505Z 	info: 		The compilation process is starting
+2020-11-17T19:10:32.505Z 	info: 		The parser has been extended to support date literals
+2020-11-17T19:10:32.505Z 	info: 		The parsing process has started
+2020-11-17T19:10:32.508Z 	error: 		Invalid number (1:3)
+2020-11-17T19:10:51.087Z 	info: 		The process has started.
+2020-11-17T19:10:51.088Z 	info: 		A source file has been provided. The code to be compiled can be found in code.1s
+2020-11-17T19:10:51.088Z 	info: 		The code has been succesfully load
+2020-11-17T19:10:51.088Z 	info: 		The compilation process is starting
+2020-11-17T19:10:51.088Z 	info: 		The parser has been extended to support date literals
+2020-11-17T19:10:51.088Z 	info: 		The parsing process has started
+2020-11-17T19:10:51.091Z 	error: 		Invalid number (1:5)
+2020-11-17T19:11:51.961Z 	info: 		The process has started.
+2020-11-17T19:11:51.962Z 	info: 		A source file has been provided. The code to be compiled can be found in code.1s
+2020-11-17T19:11:51.962Z 	info: 		The code has been succesfully load
+2020-11-17T19:11:51.962Z 	info: 		The compilation process is starting
+2020-11-17T19:11:51.962Z 	info: 		The parser has been extended to support date literals
+2020-11-17T19:11:51.962Z 	info: 		The parsing process has started
+2020-11-17T19:11:51.965Z 	error: 		Invalid number (1:5)
+2020-11-17T19:12:14.610Z 	info: 		The process has started.
+2020-11-17T19:12:14.610Z 	info: 		A source file has been provided. The code to be compiled can be found in code.1s
+2020-11-17T19:12:14.611Z 	info: 		The code has been succesfully load
+2020-11-17T19:12:14.611Z 	info: 		The compilation process is starting
+2020-11-17T19:12:14.611Z 	info: 		The parser has been extended to support date literals
+2020-11-17T19:12:14.611Z 	info: 		The parsing process has started
+2020-11-17T19:12:14.614Z 	error: 		Invalid number (1:6)
+2020-11-17T19:12:46.254Z 	info: 		The process has started.
+2020-11-17T19:12:46.255Z 	info: 		A source file has been provided. The code to be compiled can be found in code.1s
+2020-11-17T19:12:46.255Z 	info: 		The code has been succesfully load
+2020-11-17T19:12:46.255Z 	info: 		The compilation process is starting
+2020-11-17T19:12:46.255Z 	info: 		The parser has been extended to support date literals
+2020-11-17T19:12:46.255Z 	info: 		The parsing process has started
+2020-11-17T19:12:46.259Z 	error: 		Unexpected token (1:5)
+2020-11-17T19:13:11.830Z 	info: 		The process has started.
+2020-11-17T19:13:11.831Z 	info: 		A source file has been provided. The code to be compiled can be found in code.1s
+2020-11-17T19:13:11.831Z 	info: 		The code has been succesfully load
+2020-11-17T19:13:11.831Z 	info: 		The compilation process is starting
+2020-11-17T19:13:11.831Z 	info: 		The parser has been extended to support date literals
+2020-11-17T19:13:11.831Z 	info: 		The parsing process has started
+2020-11-17T19:13:11.833Z 	info: 		The code has been successfully parsed
+2020-11-17T19:13:11.834Z 	info: 		The compilation process has ended
+2020-11-17T19:13:11.834Z 	info: 		--opt option has been provided with ON data.
+2020-11-17T19:13:11.834Z 	info: 		Optimisation and minification proccess will start
+2020-11-17T19:13:11.842Z 	info: 		Optimization and minification process has ended
+2020-11-17T19:13:11.842Z 	info: 		An output file has been provided. Compiled code will be save in undefined
+2020-11-17T19:13:11.843Z 	info: 		The compiled code has been loaded into code.js.
+2020-11-17T19:13:11.843Z 	info: 		All proccess has ended without errors
+2020-11-17T19:13:24.046Z 	info: 		The process has started.
+2020-11-17T19:13:24.047Z 	info: 		A source file has been provided. The code to be compiled can be found in code.1s
+2020-11-17T19:13:24.047Z 	info: 		The code has been succesfully load
+2020-11-17T19:13:24.047Z 	info: 		The compilation process is starting
+2020-11-17T19:13:24.047Z 	info: 		The parser has been extended to support date literals
+2020-11-17T19:13:24.048Z 	info: 		The parsing process has started
+2020-11-17T19:13:24.051Z 	error: 		Unexpected token (1:5)
+2020-11-17T19:14:56.930Z 	info: 		The process has started.
+2020-11-17T19:14:56.930Z 	info: 		A source file has been provided. The code to be compiled can be found in code.1s
+2020-11-17T19:14:56.930Z 	info: 		The code has been succesfully load
+2020-11-17T19:14:56.930Z 	info: 		The compilation process is starting
+2020-11-17T19:14:56.931Z 	info: 		The parser has been extended to support date literals
+2020-11-17T19:14:56.931Z 	info: 		The parsing process has started
+2020-11-17T19:14:56.935Z 	error: 		Unexpected token (1:5)
+2020-11-17T19:15:53.738Z 	info: 		The process has started.
+2020-11-17T19:15:53.738Z 	info: 		A source file has been provided. The code to be compiled can be found in code.1s
+2020-11-17T19:15:53.738Z 	info: 		The code has been succesfully load
+2020-11-17T19:15:53.738Z 	info: 		The compilation process is starting
+2020-11-17T19:15:53.739Z 	info: 		The parser has been extended to support date literals
+2020-11-17T19:15:53.739Z 	info: 		The parsing process has started
+2020-11-17T19:15:53.742Z 	error: 		Unexpected token (1:0)
+2020-11-17T19:16:01.398Z 	info: 		The process has started.
+2020-11-17T19:16:01.398Z 	info: 		A source file has been provided. The code to be compiled can be found in code.1s
+2020-11-17T19:16:01.399Z 	info: 		The code has been succesfully load
+2020-11-17T19:16:01.399Z 	info: 		The compilation process is starting
+2020-11-17T19:16:01.399Z 	info: 		The parser has been extended to support date literals
+2020-11-17T19:16:01.399Z 	info: 		The parsing process has started
+2020-11-17T19:16:01.402Z 	error: 		Unexpected token (1:0)
+2020-11-17T19:16:10.273Z 	info: 		The process has started.
+2020-11-17T19:16:10.274Z 	info: 		A source file has been provided. The code to be compiled can be found in code.1s
+2020-11-17T19:16:10.274Z 	info: 		The code has been succesfully load
+2020-11-17T19:16:10.274Z 	info: 		The compilation process is starting
+2020-11-17T19:16:10.274Z 	info: 		The parser has been extended to support date literals
+2020-11-17T19:16:10.275Z 	info: 		The parsing process has started
+2020-11-17T19:16:10.277Z 	error: 		Cannot read property 'keyword' of undefined
+2020-11-17T19:17:39.631Z 	info: 		The process has started.
+2020-11-17T19:17:39.631Z 	info: 		A source file has been provided. The code to be compiled can be found in code.1s
+2020-11-17T19:17:39.631Z 	info: 		The code has been succesfully load
+2020-11-17T19:17:39.631Z 	info: 		The compilation process is starting
+2020-11-17T19:17:39.632Z 	info: 		The parser has been extended to support date literals
+2020-11-17T19:17:39.632Z 	info: 		The parsing process has started
+2020-11-17T19:17:39.635Z 	error: 		Unexpected token (1:0)
+2020-11-17T19:17:53.205Z 	info: 		The process has started.
+2020-11-17T19:17:53.206Z 	info: 		A source file has been provided. The code to be compiled can be found in code.1s
+2020-11-17T19:17:53.206Z 	info: 		The code has been succesfully load
+2020-11-17T19:17:53.206Z 	info: 		The compilation process is starting
+2020-11-17T19:17:53.206Z 	info: 		The parser has been extended to support date literals
+2020-11-17T19:17:53.206Z 	info: 		The parsing process has started
+2020-11-17T19:17:53.210Z 	error: 		Unexpected token (1:5)
+2020-11-17T19:19:31.281Z 	info: 		The process has started.
+2020-11-17T19:19:31.282Z 	info: 		A source file has been provided. The code to be compiled can be found in code.1s
+2020-11-17T19:19:31.282Z 	info: 		The code has been succesfully load
+2020-11-17T19:19:31.282Z 	info: 		The compilation process is starting
+2020-11-17T19:19:31.282Z 	info: 		The parser has been extended to support date literals
+2020-11-17T19:19:31.283Z 	info: 		The parsing process has started
+2020-11-17T19:19:31.286Z 	error: 		Unexpected token (1:5)
+2020-11-17T19:21:46.379Z 	info: 		The process has started.
+2020-11-17T19:21:46.379Z 	info: 		A source file has been provided. The code to be compiled can be found in code.1s
+2020-11-17T19:21:46.379Z 	info: 		The code has been succesfully load
+2020-11-17T19:21:46.379Z 	info: 		The compilation process is starting
+2020-11-17T19:21:46.380Z 	info: 		The parser has been extended to support date literals
+2020-11-17T19:21:46.380Z 	info: 		The parsing process has started
+2020-11-17T19:21:46.383Z 	error: 		Unexpected token (1:5)
+2020-11-17T19:21:55.244Z 	info: 		The process has started.
+2020-11-17T19:21:55.245Z 	info: 		A source file has been provided. The code to be compiled can be found in code.1s
+2020-11-17T19:21:55.245Z 	info: 		The code has been succesfully load
+2020-11-17T19:21:55.245Z 	info: 		The compilation process is starting
+2020-11-17T19:21:55.245Z 	info: 		The parser has been extended to support date literals
+2020-11-17T19:21:55.245Z 	info: 		The parsing process has started
+2020-11-17T19:21:55.250Z 	error: 		Unexpected token (1:5)
+2020-11-17T19:24:17.033Z 	info: 		The process has started.
+2020-11-17T19:24:17.034Z 	info: 		A source file has been provided. The code to be compiled can be found in code.1s
+2020-11-17T19:24:17.034Z 	info: 		The code has been succesfully load
+2020-11-17T19:24:17.034Z 	info: 		The compilation process is starting
+2020-11-17T19:24:17.034Z 	info: 		The parser has been extended to support date literals
+2020-11-17T19:24:17.035Z 	info: 		The parsing process has started
+2020-11-17T19:24:17.039Z 	error: 		Unexpected token (1:5)
+2020-11-17T19:46:27.003Z 	info: 		The process has started.
+2020-11-17T19:46:27.004Z 	info: 		A source file has been provided. The code to be compiled can be found in code.1s
+2020-11-17T19:46:27.005Z 	info: 		The code has been succesfully load
+2020-11-17T19:46:27.005Z 	info: 		The compilation process is starting
+2020-11-17T19:46:27.005Z 	info: 		The parser has been extended to support date literals
+2020-11-17T19:46:27.005Z 	info: 		The parsing process has started
+2020-11-17T19:46:27.009Z 	error: 		Cannot read property 'keyword' of undefined
+2020-11-17T19:46:41.287Z 	info: 		The process has started.
+2020-11-17T19:46:41.287Z 	info: 		A source file has been provided. The code to be compiled can be found in code.1s
+2020-11-17T19:46:41.287Z 	info: 		The code has been succesfully load
+2020-11-17T19:46:41.287Z 	info: 		The compilation process is starting
+2020-11-17T19:46:41.288Z 	info: 		The parser has been extended to support date literals
+2020-11-17T19:46:41.288Z 	info: 		The parsing process has started
+2020-11-17T19:46:41.292Z 	error: 		Unexpected token (1:5)
+2020-11-17T19:46:54.035Z 	info: 		The process has started.
+2020-11-17T19:46:54.035Z 	info: 		A source file has been provided. The code to be compiled can be found in code.1s
+2020-11-17T19:46:54.035Z 	info: 		The code has been succesfully load
+2020-11-17T19:46:54.036Z 	info: 		The compilation process is starting
+2020-11-17T19:46:54.036Z 	info: 		The parser has been extended to support date literals
+2020-11-17T19:46:54.036Z 	info: 		The parsing process has started
+2020-11-17T19:46:54.039Z 	error: 		Cannot read property 'keyword' of undefined
+2020-11-17T19:47:08.172Z 	info: 		The process has started.
+2020-11-17T19:47:08.172Z 	info: 		A source file has been provided. The code to be compiled can be found in code.1s
+2020-11-17T19:47:08.173Z 	info: 		The code has been succesfully load
+2020-11-17T19:47:08.173Z 	info: 		The compilation process is starting
+2020-11-17T19:47:08.173Z 	info: 		The parser has been extended to support date literals
+2020-11-17T19:47:08.173Z 	info: 		The parsing process has started
+2020-11-17T19:47:08.175Z 	error: 		Cannot read property 'keyword' of undefined
+2020-11-17T19:47:16.307Z 	info: 		The process has started.
+2020-11-17T19:47:16.307Z 	info: 		A source file has been provided. The code to be compiled can be found in code.1s
+2020-11-17T19:47:16.308Z 	info: 		The code has been succesfully load
+2020-11-17T19:47:16.308Z 	info: 		The compilation process is starting
+2020-11-17T19:47:16.308Z 	info: 		The parser has been extended to support date literals
+2020-11-17T19:47:16.308Z 	info: 		The parsing process has started
+2020-11-17T19:47:16.310Z 	error: 		Cannot read property 'keyword' of undefined
+2020-11-17T19:47:23.857Z 	info: 		The process has started.
+2020-11-17T19:47:23.858Z 	info: 		A source file has been provided. The code to be compiled can be found in code.1s
+2020-11-17T19:47:23.858Z 	info: 		The code has been succesfully load
+2020-11-17T19:47:23.858Z 	info: 		The compilation process is starting
+2020-11-17T19:47:23.858Z 	info: 		The parser has been extended to support date literals
+2020-11-17T19:47:23.858Z 	info: 		The parsing process has started
+2020-11-17T19:47:23.861Z 	error: 		Cannot read property 'keyword' of undefined
+2020-11-17T19:47:30.877Z 	info: 		The process has started.
+2020-11-17T19:47:30.878Z 	info: 		A source file has been provided. The code to be compiled can be found in code.1s
+2020-11-17T19:47:30.878Z 	info: 		The code has been succesfully load
+2020-11-17T19:47:30.878Z 	info: 		The compilation process is starting
+2020-11-17T19:47:30.878Z 	info: 		The parser has been extended to support date literals
+2020-11-17T19:47:30.878Z 	info: 		The parsing process has started
+2020-11-17T19:47:30.883Z 	error: 		Unexpected token (1:5)
+2020-11-17T19:49:21.936Z 	info: 		The process has started.
+2020-11-17T19:49:21.936Z 	info: 		A source file has been provided. The code to be compiled can be found in code.1s
+2020-11-17T19:49:21.936Z 	info: 		The code has been succesfully load
+2020-11-17T19:49:21.936Z 	info: 		The compilation process is starting
+2020-11-17T19:49:21.936Z 	info: 		The parser has been extended to support date literals
+2020-11-17T19:49:21.937Z 	info: 		The parsing process has started
+2020-11-17T19:49:21.941Z 	error: 		Unexpected token (1:5)
+2020-11-17T19:49:31.127Z 	info: 		The process has started.
+2020-11-17T19:49:31.128Z 	info: 		A source file has been provided. The code to be compiled can be found in code.1s
+2020-11-17T19:49:31.128Z 	info: 		The code has been succesfully load
+2020-11-17T19:49:31.128Z 	info: 		The compilation process is starting
+2020-11-17T19:49:31.128Z 	info: 		The parser has been extended to support date literals
+2020-11-17T19:49:31.128Z 	info: 		The parsing process has started
+2020-11-17T19:49:31.133Z 	error: 		Unexpected token (1:5)
+2020-11-17T19:49:40.623Z 	info: 		The process has started.
+2020-11-17T19:49:40.623Z 	info: 		A source file has been provided. The code to be compiled can be found in code.1s
+2020-11-17T19:49:40.623Z 	info: 		The code has been succesfully load
+2020-11-17T19:49:40.623Z 	info: 		The compilation process is starting
+2020-11-17T19:49:40.624Z 	info: 		The parser has been extended to support date literals
+2020-11-17T19:49:40.624Z 	info: 		The parsing process has started
+2020-11-17T19:49:40.627Z 	error: 		Unexpected token (1:5)
+2020-11-17T19:49:55.051Z 	info: 		The process has started.
+2020-11-17T19:49:55.052Z 	info: 		A source file has been provided. The code to be compiled can be found in code.1s
+2020-11-17T19:49:55.052Z 	info: 		The code has been succesfully load
+2020-11-17T19:49:55.052Z 	info: 		The compilation process is starting
+2020-11-17T19:49:55.052Z 	info: 		The parser has been extended to support date literals
+2020-11-17T19:49:55.052Z 	info: 		The parsing process has started
+2020-11-17T19:49:55.056Z 	error: 		Unexpected token (1:5)
+2020-11-17T19:50:03.978Z 	info: 		The process has started.
+2020-11-17T19:50:03.979Z 	info: 		A source file has been provided. The code to be compiled can be found in code.1s
+2020-11-17T19:50:03.979Z 	info: 		The code has been succesfully load
+2020-11-17T19:50:03.979Z 	info: 		The compilation process is starting
+2020-11-17T19:50:03.979Z 	info: 		The parser has been extended to support date literals
+2020-11-17T19:50:03.979Z 	info: 		The parsing process has started
+2020-11-17T19:50:03.983Z 	error: 		Unexpected token (1:5)
+2020-11-17T19:53:31.297Z 	info: 		The process has started.
+2020-11-17T19:53:31.298Z 	info: 		A source file has been provided. The code to be compiled can be found in code.1s
+2020-11-17T19:53:31.299Z 	info: 		The code has been succesfully load
+2020-11-17T19:53:31.299Z 	info: 		The compilation process is starting
+2020-11-17T19:53:31.299Z 	info: 		The parser has been extended to support date literals
+2020-11-17T19:53:31.300Z 	info: 		The parsing process has started
+2020-11-17T19:53:31.309Z 	error: 		Unexpected token (1:5)
+2020-11-17T19:58:44.609Z 	info: 		The process has started.
+2020-11-17T19:58:44.609Z 	info: 		A source file has been provided. The code to be compiled can be found in code.1s
+2020-11-17T19:58:44.610Z 	info: 		The code has been succesfully load
+2020-11-17T19:58:44.610Z 	info: 		The compilation process is starting
+2020-11-17T19:58:44.610Z 	info: 		The parser has been extended to support date literals
+2020-11-17T19:58:44.611Z 	info: 		The parsing process has started
+2020-11-17T19:58:44.625Z 	error: 		Unexpected token (1:5)
+2020-11-17T19:59:05.566Z 	info: 		The process has started.
+2020-11-17T19:59:05.566Z 	info: 		A source file has been provided. The code to be compiled can be found in code.1s
+2020-11-17T19:59:05.567Z 	info: 		The code has been succesfully load
+2020-11-17T19:59:05.567Z 	info: 		The compilation process is starting
+2020-11-17T19:59:05.567Z 	info: 		The parser has been extended to support date literals
+2020-11-17T19:59:05.567Z 	info: 		The parsing process has started
+2020-11-17T19:59:05.585Z 	error: 		Unexpected token (1:5)
+2020-11-17T19:59:55.775Z 	info: 		The process has started.
+2020-11-17T19:59:55.776Z 	info: 		A source file has been provided. The code to be compiled can be found in code.1s
+2020-11-17T19:59:55.776Z 	info: 		The code has been succesfully load
+2020-11-17T19:59:55.776Z 	info: 		The compilation process is starting
+2020-11-17T19:59:55.776Z 	info: 		The parser has been extended to support date literals
+2020-11-17T19:59:55.776Z 	info: 		The parsing process has started
+2020-11-17T19:59:55.784Z 	info: 		The code has been successfully parsed
+2020-11-17T19:59:55.785Z 	info: 		The compilation process has ended
+2020-11-17T19:59:55.785Z 	info: 		--opt option has been provided with ON data.
+2020-11-17T19:59:55.785Z 	info: 		Optimisation and minification proccess will start
+2020-11-17T19:59:55.791Z 	info: 		Optimization and minification process has ended
+2020-11-17T19:59:55.791Z 	info: 		An output file has been provided. Compiled code will be save in undefined
+2020-11-17T19:59:55.792Z 	info: 		The compiled code has been loaded into code.js.
+2020-11-17T19:59:55.792Z 	info: 		All proccess has ended without errors
+2020-11-17T20:00:06.565Z 	info: 		The process has started.
+2020-11-17T20:00:06.566Z 	info: 		A source file has been provided. The code to be compiled can be found in code.1s
+2020-11-17T20:00:06.566Z 	info: 		The code has been succesfully load
+2020-11-17T20:00:06.566Z 	info: 		The compilation process is starting
+2020-11-17T20:00:06.566Z 	info: 		The parser has been extended to support date literals
+2020-11-17T20:00:06.566Z 	info: 		The parsing process has started
+2020-11-17T20:00:06.578Z 	info: 		The code has been successfully parsed
+2020-11-17T20:00:06.579Z 	info: 		The compilation process has ended
+2020-11-17T20:00:06.579Z 	info: 		--opt option has been provided with ON data.
+2020-11-17T20:00:06.579Z 	info: 		Optimisation and minification proccess will start
+2020-11-17T20:00:06.585Z 	info: 		Optimization and minification process has ended
+2020-11-17T20:00:06.585Z 	info: 		An output file has been provided. Compiled code will be save in undefined
+2020-11-17T20:00:06.585Z 	info: 		The compiled code has been loaded into code.js.
+2020-11-17T20:00:06.586Z 	info: 		All proccess has ended without errors
+2020-11-17T20:01:40.963Z 	info: 		The process has started.
+2020-11-17T20:01:40.963Z 	info: 		A source file has been provided. The code to be compiled can be found in code.1s
+2020-11-17T20:01:40.964Z 	info: 		The code has been succesfully load
+2020-11-17T20:01:40.964Z 	info: 		The compilation process is starting
+2020-11-17T20:01:40.964Z 	info: 		The parser has been extended to support date literals
+2020-11-17T20:01:40.964Z 	info: 		The parsing process has started
+2020-11-17T20:01:40.973Z 	info: 		The code has been successfully parsed
+2020-11-17T20:01:40.974Z 	info: 		The compilation process has ended
+2020-11-17T20:01:40.974Z 	info: 		--opt option has been provided with ON data.
+2020-11-17T20:01:40.974Z 	info: 		Optimisation and minification proccess will start
+2020-11-17T20:01:40.980Z 	info: 		Optimization and minification process has ended
+2020-11-17T20:01:40.980Z 	info: 		An output file has been provided. Compiled code will be save in undefined
+2020-11-17T20:01:40.981Z 	info: 		The compiled code has been loaded into code.js.
+2020-11-17T20:01:40.981Z 	info: 		All proccess has ended without errors
+2020-11-17T20:02:18.472Z 	info: 		The process has started.
+2020-11-17T20:02:18.473Z 	info: 		A source file has been provided. The code to be compiled can be found in code.1s
+2020-11-17T20:02:18.473Z 	info: 		The code has been succesfully load
+2020-11-17T20:02:18.473Z 	info: 		The compilation process is starting
+2020-11-17T20:02:18.473Z 	info: 		The parser has been extended to support date literals
+2020-11-17T20:02:18.473Z 	info: 		The parsing process has started
+2020-11-17T20:02:18.475Z 	info: 		The code has been successfully parsed
+2020-11-17T20:02:18.476Z 	info: 		The compilation process has ended
+2020-11-17T20:02:18.476Z 	info: 		--opt option has been provided with ON data.
+2020-11-17T20:02:18.476Z 	info: 		Optimisation and minification proccess will start
+2020-11-17T20:02:18.482Z 	info: 		Optimization and minification process has ended
+2020-11-17T20:02:18.482Z 	info: 		An output file has been provided. Compiled code will be save in undefined
+2020-11-17T20:02:18.482Z 	info: 		The compiled code has been loaded into code.js.
+2020-11-17T20:02:18.483Z 	info: 		All proccess has ended without errors
+2020-11-17T20:02:31.812Z 	info: 		The process has started.
+2020-11-17T20:02:31.813Z 	info: 		A source file has been provided. The code to be compiled can be found in code.1s
+2020-11-17T20:02:31.813Z 	info: 		The code has been succesfully load
+2020-11-17T20:02:31.813Z 	info: 		The compilation process is starting
+2020-11-17T20:02:31.813Z 	info: 		The parser has been extended to support date literals
+2020-11-17T20:02:31.813Z 	info: 		The parsing process has started
+2020-11-17T20:02:31.815Z 	info: 		The code has been successfully parsed
+2020-11-17T20:02:31.816Z 	info: 		The compilation process has ended
+2020-11-17T20:02:31.816Z 	info: 		--opt option has been provided with ON data.
+2020-11-17T20:02:31.816Z 	info: 		Optimisation and minification proccess will start
+2020-11-17T20:02:31.823Z 	info: 		Optimization and minification process has ended
+2020-11-17T20:02:31.823Z 	info: 		An output file has been provided. Compiled code will be save in undefined
+2020-11-17T20:02:31.824Z 	info: 		The compiled code has been loaded into code.js.
+2020-11-17T20:02:31.824Z 	info: 		All proccess has ended without errors
+2020-11-17T20:05:34.852Z 	info: 		The process has started.
+2020-11-17T20:05:34.853Z 	info: 		A source file has been provided. The code to be compiled can be found in code.1s
+2020-11-17T20:05:34.854Z 	info: 		The code has been succesfully load
+2020-11-17T20:05:34.854Z 	info: 		The compilation process is starting
+2020-11-17T20:05:34.854Z 	info: 		The parser has been extended to support date literals
+2020-11-17T20:05:34.854Z 	info: 		The parsing process has started
+2020-11-17T20:05:34.857Z 	info: 		The code has been successfully parsed
+2020-11-17T20:05:34.858Z 	info: 		The compilation process has ended
+2020-11-17T20:05:34.859Z 	info: 		--opt option has been provided with ON data.
+2020-11-17T20:05:34.859Z 	info: 		Optimisation and minification proccess will start
+2020-11-17T20:05:34.867Z 	info: 		Optimization and minification process has ended
+2020-11-17T20:05:34.867Z 	info: 		An output file has been provided. Compiled code will be save in undefined
+2020-11-17T20:05:34.868Z 	info: 		The compiled code has been loaded into code.js.
+2020-11-17T20:05:34.868Z 	info: 		All proccess has ended without errors
+2020-11-17T20:05:50.359Z 	info: 		The process has started.
+2020-11-17T20:05:50.359Z 	info: 		A source file has been provided. The code to be compiled can be found in code.1s
+2020-11-17T20:05:50.359Z 	info: 		The code has been succesfully load
+2020-11-17T20:05:50.359Z 	info: 		The compilation process is starting
+2020-11-17T20:05:50.360Z 	info: 		The parser has been extended to support date literals
+2020-11-17T20:05:50.360Z 	info: 		The parsing process has started
+2020-11-17T20:05:50.364Z 	error: 		Unexpected token (1:5)
+2020-11-17T20:06:29.662Z 	info: 		The process has started.
+2020-11-17T20:06:29.663Z 	info: 		A source file has been provided. The code to be compiled can be found in code.1s
+2020-11-17T20:06:29.664Z 	info: 		The code has been succesfully load
+2020-11-17T20:06:29.664Z 	info: 		The compilation process is starting
+2020-11-17T20:06:29.664Z 	info: 		The parser has been extended to support date literals
+2020-11-17T20:06:29.664Z 	info: 		The parsing process has started
+2020-11-17T20:06:29.669Z 	error: 		Unexpected token (1:5)
+2020-11-17T20:06:38.799Z 	info: 		The process has started.
+2020-11-17T20:06:38.800Z 	info: 		A source file has been provided. The code to be compiled can be found in code.1s
+2020-11-17T20:06:38.800Z 	info: 		The code has been succesfully load
+2020-11-17T20:06:38.800Z 	info: 		The compilation process is starting
+2020-11-17T20:06:38.800Z 	info: 		The parser has been extended to support date literals
+2020-11-17T20:06:38.800Z 	info: 		The parsing process has started
+2020-11-17T20:06:38.808Z 	error: 		Unexpected token (1:5)
+2020-11-17T20:06:56.057Z 	info: 		The process has started.
+2020-11-17T20:06:56.057Z 	info: 		A source file has been provided. The code to be compiled can be found in code.1s
+2020-11-17T20:06:56.057Z 	info: 		The code has been succesfully load
+2020-11-17T20:06:56.057Z 	info: 		The compilation process is starting
+2020-11-17T20:06:56.058Z 	info: 		The parser has been extended to support date literals
+2020-11-17T20:06:56.058Z 	info: 		The parsing process has started
+2020-11-17T20:06:56.065Z 	error: 		Unexpected token (1:5)
+2020-11-17T21:52:08.376Z 	info: 		The process has started.
+2020-11-17T21:52:08.377Z 	info: 		A source file has been provided. The code to be compiled can be found in code.1s
+2020-11-17T21:52:08.377Z 	info: 		The code has been succesfully load
+2020-11-17T21:52:08.377Z 	info: 		The compilation process is starting
+2020-11-17T21:52:08.377Z 	info: 		The parser has been extended to support date literals
+2020-11-17T21:52:08.377Z 	info: 		The parsing process has started
+2020-11-17T21:52:08.378Z 	error: 		Unexpected character '∞' (1:0)
+2020-11-17T21:53:39.518Z 	info: 		The process has started.
+2020-11-17T21:53:39.519Z 	info: 		A source file has been provided. The code to be compiled can be found in code.1s
+2020-11-17T21:53:39.519Z 	info: 		The code has been succesfully load
+2020-11-17T21:53:39.519Z 	info: 		The compilation process is starting
+2020-11-17T21:53:39.519Z 	info: 		The parser has been extended to support date literals
+2020-11-17T21:53:39.519Z 	info: 		The parsing process has started
+2020-11-17T21:53:39.521Z 	error: 		Unexpected character '∞' (1:0)
+2020-11-17T21:53:59.858Z 	info: 		The process has started.
+2020-11-17T21:53:59.858Z 	info: 		A source file has been provided. The code to be compiled can be found in code.1s
+2020-11-17T21:53:59.859Z 	info: 		The code has been succesfully load
+2020-11-17T21:53:59.859Z 	info: 		The compilation process is starting
+2020-11-17T21:53:59.859Z 	info: 		The parser has been extended to support date literals
+2020-11-17T21:53:59.859Z 	info: 		The parsing process has started
+2020-11-17T21:53:59.861Z 	info: 		The code has been successfully parsed
+2020-11-17T21:53:59.862Z 	info: 		The compilation process has ended
+2020-11-17T21:53:59.862Z 	info: 		--opt option has been provided with ON data.
+2020-11-17T21:53:59.862Z 	info: 		Optimisation and minification proccess will start
+2020-11-17T21:53:59.869Z 	info: 		Optimization and minification process has ended
+2020-11-17T21:53:59.869Z 	info: 		An output file has been provided. Compiled code will be save in undefined
+2020-11-17T21:53:59.870Z 	info: 		The compiled code has been loaded into code.js.
+2020-11-17T21:53:59.870Z 	info: 		All proccess has ended without errors
+2020-11-17T21:54:12.939Z 	info: 		The process has started.
+2020-11-17T21:54:12.940Z 	info: 		A source file has been provided. The code to be compiled can be found in code.1s
+2020-11-17T21:54:12.940Z 	info: 		The code has been succesfully load
+2020-11-17T21:54:12.940Z 	info: 		The compilation process is starting
+2020-11-17T21:54:12.940Z 	info: 		The parser has been extended to support date literals
+2020-11-17T21:54:12.940Z 	info: 		The parsing process has started
+2020-11-17T21:54:12.943Z 	info: 		The code has been successfully parsed
+2020-11-17T21:54:12.944Z 	info: 		The compilation process has ended
+2020-11-17T21:54:12.944Z 	info: 		--opt option has been provided with ON data.
+2020-11-17T21:54:12.944Z 	info: 		Optimisation and minification proccess will start
+2020-11-17T21:54:12.951Z 	info: 		Optimization and minification process has ended
+2020-11-17T21:54:12.951Z 	info: 		An output file has been provided. Compiled code will be save in undefined
+2020-11-17T21:54:12.952Z 	info: 		The compiled code has been loaded into code.js.
+2020-11-17T21:54:12.952Z 	info: 		All proccess has ended without errors
+2020-11-17T21:55:04.508Z 	info: 		The process has started.
+2020-11-17T21:55:04.509Z 	info: 		A source file has been provided. The code to be compiled can be found in code.1s
+2020-11-17T21:55:04.509Z 	info: 		The code has been succesfully load
+2020-11-17T21:55:04.509Z 	info: 		The compilation process is starting
+2020-11-17T21:55:04.510Z 	info: 		The parser has been extended to support date literals
+2020-11-17T21:55:04.510Z 	info: 		The parsing process has started
+2020-11-17T21:55:04.512Z 	info: 		The code has been successfully parsed
+2020-11-17T21:55:04.513Z 	info: 		The compilation process has ended
+2020-11-17T21:55:04.513Z 	info: 		--opt option has been provided with ON data.
+2020-11-17T21:55:04.513Z 	info: 		Optimisation and minification proccess will start
+2020-11-17T21:55:04.520Z 	info: 		Optimization and minification process has ended
+2020-11-17T21:55:04.520Z 	info: 		An output file has been provided. Compiled code will be save in undefined
+2020-11-17T21:55:04.521Z 	info: 		The compiled code has been loaded into code.js.
+2020-11-17T21:55:04.521Z 	info: 		All proccess has ended without errors
+2020-11-17T21:55:41.098Z 	info: 		The process has started.
+2020-11-17T21:55:41.099Z 	info: 		A source file has been provided. The code to be compiled can be found in code.1s
+2020-11-17T21:55:41.099Z 	info: 		The code has been succesfully load
+2020-11-17T21:55:41.099Z 	info: 		The compilation process is starting
+2020-11-17T21:55:41.099Z 	info: 		The parser has been extended to support date literals
+2020-11-17T21:55:41.099Z 	info: 		The parsing process has started
+2020-11-17T21:55:41.101Z 	info: 		The code has been successfully parsed
+2020-11-17T21:55:41.103Z 	info: 		The compilation process has ended
+2020-11-17T21:55:41.103Z 	info: 		--opt option has been provided with ON data.
+2020-11-17T21:55:41.103Z 	info: 		Optimisation and minification proccess will start
+2020-11-17T21:55:41.110Z 	info: 		Optimization and minification process has ended
+2020-11-17T21:55:41.110Z 	info: 		An output file has been provided. Compiled code will be save in undefined
+2020-11-17T21:55:41.110Z 	info: 		The compiled code has been loaded into code.js.
+2020-11-17T21:55:41.110Z 	info: 		All proccess has ended without errors
+2020-11-17T22:01:08.070Z 	info: 		The process has started.
+2020-11-17T22:01:08.071Z 	info: 		A source file has been provided. The code to be compiled can be found in code.1s
+2020-11-17T22:01:08.071Z 	info: 		The code has been succesfully load
+2020-11-17T22:01:08.071Z 	info: 		The compilation process is starting
+2020-11-17T22:01:08.071Z 	info: 		The parser has been extended to support date literals
+2020-11-17T22:01:08.071Z 	info: 		The parsing process has started
+2020-11-17T22:01:08.079Z 	info: 		The code has been successfully parsed
+2020-11-17T22:01:08.080Z 	info: 		The compilation process has ended
+2020-11-17T22:01:08.080Z 	info: 		--opt option has been provided with ON data.
+2020-11-17T22:01:08.080Z 	info: 		Optimisation and minification proccess will start
+2020-11-17T22:01:08.088Z 	info: 		Optimization and minification process has ended
+2020-11-17T22:01:08.088Z 	info: 		An output file has been provided. Compiled code will be save in undefined
+2020-11-17T22:01:08.088Z 	info: 		The compiled code has been loaded into code.js.
+2020-11-17T22:01:08.088Z 	info: 		All proccess has ended without errors
+2020-11-17T22:10:01.056Z 	info: 		The process has started.
+2020-11-17T22:10:01.056Z 	info: 		A source file has been provided. The code to be compiled can be found in code.1s
+2020-11-17T22:10:01.057Z 	info: 		The code has been succesfully load
+2020-11-17T22:10:01.057Z 	info: 		The compilation process is starting
+2020-11-17T22:10:01.057Z 	info: 		The parser has been extended to support date literals
+2020-11-17T22:10:01.057Z 	info: 		The parsing process has started
+2020-11-17T22:10:01.062Z 	info: 		The code has been successfully parsed
+2020-11-17T22:10:01.066Z 	info: 		A array multiassign expresison has been found. The code has been changed to an assign seqeunce. 
+	----- x[1, 2, 3] = y  
+	+++++ x[3] = x[2] = x[1] = y
+2020-11-17T22:10:01.067Z 	info: 		A var declarator has been found and it has been converted into a let declarator. 
+	----- var w = Infinity;
+	+++++ let w = Infinity;
+2020-11-17T22:10:01.068Z 	info: 		A date literal has been found and it has been converted into a Date object. 
+	----- 2020.10.24t4
+	+++++ new Date(Date.UTC(2020, 10, 24, 4))
+2020-11-17T22:10:01.069Z 	info: 		A var declarator has been found and it has been converted into a let declarator. 
+	----- var z = new Date(Date.UTC(Infinity, Infinity, Infinity, Infinity));
+	+++++ let z = new Date(Date.UTC(Infinity, Infinity, Infinity, Infinity));
+2020-11-17T22:10:01.069Z 	info: 		A var declarator has been found and it has been converted into a let declarator. 
+	----- var t = Infinity;
+	+++++ let t = Infinity;
+2020-11-17T22:10:01.070Z 	info: 		A function in statement context has been found. It has been assign into a constant with the same name. 
+	----- 
+function g(x, y) {
+    x[Infinity] = x[Infinity] = x[Infinity] = y;
+    let w = Infinity;
+    let z = new Date(Date.UTC(Infinity, Infinity, Infinity, Infinity));
+    let t = Infinity;
+}  
+	+++++ 
+const g = function g(x, y) {
+    x[Infinity] = x[Infinity] = x[Infinity] = y;
+    let w = Infinity;
+    let z = new Date(Date.UTC(Infinity, Infinity, Infinity, Infinity));
+    let t = Infinity;
+};
+2020-11-17T22:10:01.071Z 	info: 		The compilation process has ended
+2020-11-17T22:10:01.071Z 	info: 		--opt option has been provided with ON data.
+2020-11-17T22:10:01.071Z 	info: 		Optimisation and minification proccess will start
+2020-11-17T22:10:01.089Z 	info: 		Optimization and minification process has ended
+2020-11-17T22:10:01.089Z 	info: 		An output file has been provided. Compiled code will be save in undefined
+2020-11-17T22:10:01.089Z 	info: 		The compiled code has been loaded into code.js.
+2020-11-17T22:10:01.089Z 	info: 		All proccess has ended without errors
+2020-11-17T22:10:52.094Z 	info: 		The process has started.
+2020-11-17T22:10:52.094Z 	info: 		A source file has been provided. The code to be compiled can be found in code.1s
+2020-11-17T22:10:52.094Z 	info: 		The code has been succesfully load
+2020-11-17T22:10:52.094Z 	info: 		The compilation process is starting
+2020-11-17T22:10:52.095Z 	info: 		The parser has been extended to support date literals
+2020-11-17T22:10:52.095Z 	info: 		The parsing process has started
+2020-11-17T22:10:52.099Z 	info: 		The code has been successfully parsed
+2020-11-17T22:10:52.102Z 	info: 		A array multiassign expresison has been found. The code has been changed to an assign seqeunce. 
+	----- x[1, 2, 3] = y  
+	+++++ x[3] = x[2] = x[1] = y
+2020-11-17T22:10:52.104Z 	info: 		A var declarator has been found and it has been converted into a let declarator. 
+	----- var w = Infinity;
+	+++++ let w = Infinity;
+2020-11-17T22:10:52.104Z 	info: 		A date literal has been found and it has been converted into a Date object. 
+	----- 2020.10.24t4
+	+++++ new Date(Date.UTC(2020, 10, 24, 4))
+2020-11-17T22:10:52.105Z 	info: 		A var declarator has been found and it has been converted into a let declarator. 
+	----- var z = new Date(Date.UTC(Infinity, Infinity, Infinity, Infinity));
+	+++++ let z = new Date(Date.UTC(Infinity, Infinity, Infinity, Infinity));
+2020-11-17T22:10:52.105Z 	info: 		A var declarator has been found and it has been converted into a let declarator. 
+	----- var t = Infinity;
+	+++++ let t = Infinity;
+2020-11-17T22:10:52.106Z 	info: 		A function in statement context has been found. It has been assign into a constant with the same name. 
+	----- 
+function g(x, y) {
+    x[Infinity] = x[Infinity] = x[Infinity] = y;
+    let w = Infinity;
+    let z = new Date(Date.UTC(Infinity, Infinity, Infinity, Infinity));
+    let t = Infinity;
+}  
+	+++++ 
+const g = function g(x, y) {
+    x[Infinity] = x[Infinity] = x[Infinity] = y;
+    let w = Infinity;
+    let z = new Date(Date.UTC(Infinity, Infinity, Infinity, Infinity));
+    let t = Infinity;
+};
+2020-11-17T22:10:52.106Z 	info: 		The compilation process has ended
+2020-11-17T22:10:52.106Z 	info: 		--opt option has been provided with OFF data or has not been provided.
+2020-11-17T22:10:52.106Z 	info: 		Optimization and minification process will not be performed.
+2020-11-17T22:10:52.107Z 	info: 		An output file has been provided. Compiled code will be save in undefined
+2020-11-17T22:10:52.107Z 	info: 		The compiled code has been loaded into code.js.
+2020-11-17T22:10:52.107Z 	info: 		All proccess has ended without errors
+2020-11-17T22:11:14.440Z 	info: 		The process has started.
+2020-11-17T22:11:14.441Z 	info: 		A source file has been provided. The code to be compiled can be found in code.1s
+2020-11-17T22:11:14.441Z 	info: 		The code has been succesfully load
+2020-11-17T22:11:14.441Z 	info: 		The compilation process is starting
+2020-11-17T22:11:14.441Z 	info: 		The parser has been extended to support date literals
+2020-11-17T22:11:14.441Z 	info: 		The parsing process has started
+2020-11-17T22:11:14.445Z 	info: 		The code has been successfully parsed
+2020-11-17T22:11:14.449Z 	info: 		A array multiassign expresison has been found. The code has been changed to an assign seqeunce. 
+	----- x[1, 2, 3] = y  
+	+++++ x[3] = x[2] = x[1] = y
+2020-11-17T22:11:14.449Z 	info: 		A var declarator has been found and it has been converted into a let declarator. 
+	----- var w = 1;
+	+++++ let w = 1;
+2020-11-17T22:11:14.450Z 	info: 		A date literal has been found and it has been converted into a Date object. 
+	----- 2020.10.24t4
+	+++++ new Date(Date.UTC(2020, 10, 24, 4))
+2020-11-17T22:11:14.450Z 	info: 		A var declarator has been found and it has been converted into a let declarator. 
+	----- var z = new Date(Date.UTC(2020, 10, 24, 4));
+	+++++ let z = new Date(Date.UTC(2020, 10, 24, 4));
+2020-11-17T22:11:14.450Z 	info: 		A var declarator has been found and it has been converted into a let declarator. 
+	----- var t = Infinity;
+	+++++ let t = Infinity;
+2020-11-17T22:11:14.451Z 	info: 		A function in statement context has been found. It has been assign into a constant with the same name. 
+	----- 
+function g(x, y) {
+    x[3] = x[2] = x[1] = y;
+    let w = 1;
+    let z = new Date(Date.UTC(2020, 10, 24, 4));
+    let t = Infinity;
+}  
+	+++++ 
+const g = function g(x, y) {
+    x[3] = x[2] = x[1] = y;
+    let w = 1;
+    let z = new Date(Date.UTC(2020, 10, 24, 4));
+    let t = Infinity;
+};
+2020-11-17T22:11:14.452Z 	info: 		The compilation process has ended
+2020-11-17T22:11:14.452Z 	info: 		--opt option has been provided with OFF data or has not been provided.
+2020-11-17T22:11:14.452Z 	info: 		Optimization and minification process will not be performed.
+2020-11-17T22:11:14.452Z 	info: 		An output file has been provided. Compiled code will be save in undefined
+2020-11-17T22:11:14.453Z 	info: 		The compiled code has been loaded into code.js.
+2020-11-17T22:11:14.453Z 	info: 		All proccess has ended without errors
+2020-11-17T22:19:04.391Z 	info: 		The process has started.
+2020-11-17T22:19:04.392Z 	info: 		A source file has been provided. The code to be compiled can be found in code.1s
+2020-11-17T22:19:04.393Z 	info: 		The code has been succesfully load
+2020-11-17T22:19:04.393Z 	info: 		The compilation process is starting
+2020-11-17T22:19:04.393Z 	info: 		The parser has been extended to support date literals
+2020-11-17T22:19:04.393Z 	info: 		The parsing process has started
+2020-11-17T22:19:04.398Z 	error: 		Unexpected character '∞' (5:12)
+2020-11-17T22:19:44.801Z 	info: 		The process has started.
+2020-11-17T22:19:44.802Z 	info: 		A source file has been provided. The code to be compiled can be found in code.1s
+2020-11-17T22:19:44.802Z 	info: 		The code has been succesfully load
+2020-11-17T22:19:44.802Z 	info: 		The compilation process is starting
+2020-11-17T22:19:44.802Z 	info: 		The parser has been extended to support date literals
+2020-11-17T22:19:44.803Z 	info: 		The parsing process has started
+2020-11-17T22:19:44.808Z 	error: 		Unexpected character '∞' (5:12)
+2020-11-17T22:20:02.455Z 	info: 		The process has started.
+2020-11-17T22:20:02.456Z 	info: 		A source file has been provided. The code to be compiled can be found in code.1s
+2020-11-17T22:20:02.457Z 	info: 		The code has been succesfully load
+2020-11-17T22:20:02.457Z 	info: 		The compilation process is starting
+2020-11-17T22:20:02.457Z 	info: 		The parser has been extended to support date literals
+2020-11-17T22:20:02.457Z 	info: 		The parsing process has started
+2020-11-17T22:20:02.463Z 	error: 		Unexpected character '∞' (5:12)
+2020-11-17T22:21:24.747Z 	info: 		The process has started.
+2020-11-17T22:21:24.747Z 	info: 		A source file has been provided. The code to be compiled can be found in code.1s
+2020-11-17T22:21:24.748Z 	info: 		The code has been succesfully load
+2020-11-17T22:21:24.748Z 	info: 		The compilation process is starting
+2020-11-17T22:21:24.748Z 	info: 		The parser has been extended to support date literals
+2020-11-17T22:21:24.748Z 	info: 		The parsing process has started
+2020-11-17T22:21:24.754Z 	error: 		Unexpected character '∞' (5:12)
+2020-11-17T22:22:52.983Z 	info: 		The process has started.
+2020-11-17T22:22:52.983Z 	info: 		A source file has been provided. The code to be compiled can be found in code.1s
+2020-11-17T22:22:52.984Z 	info: 		The code has been succesfully load
+2020-11-17T22:22:52.984Z 	info: 		The compilation process is starting
+2020-11-17T22:22:52.984Z 	info: 		The parser has been extended to support date literals
+2020-11-17T22:22:52.984Z 	info: 		The parsing process has started
+2020-11-17T22:22:52.990Z 	error: 		Unexpected character '∞' (5:12)
+2020-11-17T22:23:23.585Z 	info: 		The process has started.
+2020-11-17T22:23:23.586Z 	info: 		A source file has been provided. The code to be compiled can be found in code.1s
+2020-11-17T22:23:23.587Z 	info: 		The code has been succesfully load
+2020-11-17T22:23:23.587Z 	info: 		The compilation process is starting
+2020-11-17T22:23:23.587Z 	info: 		The parser has been extended to support date literals
+2020-11-17T22:23:23.587Z 	info: 		The parsing process has started
+2020-11-17T22:23:23.589Z 	error: 		Unexpected character '∞' (1:0)
+2020-11-17T22:23:49.078Z 	info: 		The process has started.
+2020-11-17T22:23:49.078Z 	info: 		A source file has been provided. The code to be compiled can be found in code.1s
+2020-11-17T22:23:49.078Z 	info: 		The code has been succesfully load
+2020-11-17T22:23:49.079Z 	info: 		The compilation process is starting
+2020-11-17T22:23:49.079Z 	info: 		The parser has been extended to support date literals
+2020-11-17T22:23:49.079Z 	info: 		The parsing process has started
+2020-11-17T22:23:49.081Z 	error: 		Unexpected character '∞' (1:8)
+2020-11-17T22:24:50.467Z 	info: 		The process has started.
+2020-11-17T22:24:50.468Z 	info: 		A source file has been provided. The code to be compiled can be found in code.1s
+2020-11-17T22:24:50.468Z 	info: 		The code has been succesfully load
+2020-11-17T22:24:50.468Z 	info: 		The compilation process is starting
+2020-11-17T22:24:50.468Z 	info: 		The parser has been extended to support date literals
+2020-11-17T22:24:50.468Z 	info: 		The parsing process has started
+2020-11-17T22:24:50.472Z 	error: 		util is not defined
+2020-11-17T22:25:13.208Z 	info: 		The process has started.
+2020-11-17T22:25:13.208Z 	info: 		A source file has been provided. The code to be compiled can be found in code.1s
+2020-11-17T22:25:13.208Z 	info: 		The code has been succesfully load
+2020-11-17T22:25:13.209Z 	info: 		The compilation process is starting
+2020-11-17T22:25:13.209Z 	info: 		The parser has been extended to support date literals
+2020-11-17T22:25:13.209Z 	info: 		The parsing process has started
+2020-11-17T22:25:13.214Z 	info: 		The code has been successfully parsed
+2020-11-17T22:25:13.215Z 	info: 		A var declarator has been found and it has been converted into a let declarator. 
+	----- var t = Infinity;
+	+++++ let t = Infinity;
+2020-11-17T22:25:13.215Z 	info: 		The compilation process has ended
+2020-11-17T22:25:13.215Z 	info: 		--opt option has been provided with OFF data or has not been provided.
+2020-11-17T22:25:13.215Z 	info: 		Optimization and minification process will not be performed.
+2020-11-17T22:25:13.216Z 	info: 		An output file has been provided. Compiled code will be save in undefined
+2020-11-17T22:25:13.216Z 	info: 		The compiled code has been loaded into code.js.
+2020-11-17T22:25:13.216Z 	info: 		All proccess has ended without errors
+2020-11-17T22:27:28.984Z 	info: 		The process has started.
+2020-11-17T22:27:28.985Z 	info: 		A source file has been provided. The code to be compiled can be found in code.1s
+2020-11-17T22:27:28.985Z 	info: 		The code has been succesfully load
+2020-11-17T22:27:28.985Z 	info: 		The compilation process is starting
+2020-11-17T22:27:28.986Z 	info: 		The parser has been extended to support date literals
+2020-11-17T22:27:28.986Z 	info: 		The parsing process has started
+2020-11-17T22:27:28.988Z 	error: 		Unexpected character '∞' (1:8)
+2020-11-17T22:28:39.614Z 	info: 		The process has started.
+2020-11-17T22:28:39.614Z 	info: 		A source file has been provided. The code to be compiled can be found in code.1s
+2020-11-17T22:28:39.615Z 	info: 		The code has been succesfully load
+2020-11-17T22:28:39.615Z 	info: 		The compilation process is starting
+2020-11-17T22:28:39.615Z 	info: 		The parser has been extended to support date literals
+2020-11-17T22:28:39.615Z 	info: 		The parsing process has started
+2020-11-17T22:28:39.618Z 	error: 		Unexpected character '∞' (1:8)
+2020-11-17T22:28:53.508Z 	info: 		The process has started.
+2020-11-17T22:28:53.509Z 	info: 		A source file has been provided. The code to be compiled can be found in code.1s
+2020-11-17T22:28:53.509Z 	info: 		The code has been succesfully load
+2020-11-17T22:28:53.509Z 	info: 		The compilation process is starting
+2020-11-17T22:28:53.509Z 	info: 		The parser has been extended to support date literals
+2020-11-17T22:28:53.509Z 	info: 		The parsing process has started
+2020-11-17T22:28:53.511Z 	error: 		Unexpected character '∞' (1:8)
+2020-11-17T22:29:22.518Z 	info: 		The process has started.
+2020-11-17T22:29:22.519Z 	info: 		A source file has been provided. The code to be compiled can be found in code.1s
+2020-11-17T22:29:22.519Z 	info: 		The code has been succesfully load
+2020-11-17T22:29:22.519Z 	info: 		The compilation process is starting
+2020-11-17T22:29:22.519Z 	info: 		The parser has been extended to support date literals
+2020-11-17T22:29:22.519Z 	info: 		The parsing process has started
+2020-11-17T22:29:22.521Z 	error: 		Unexpected character '∞' (1:8)
+2020-11-17T22:31:26.519Z 	info: 		The process has started.
+2020-11-17T22:31:26.520Z 	info: 		A source file has been provided. The code to be compiled can be found in code.1s
+2020-11-17T22:31:26.520Z 	info: 		The code has been succesfully load
+2020-11-17T22:31:26.521Z 	info: 		The compilation process is starting
+2020-11-17T22:31:26.521Z 	info: 		The parser has been extended to support date literals
+2020-11-17T22:31:26.521Z 	info: 		The parsing process has started
+2020-11-17T22:31:26.523Z 	error: 		Unexpected character '∞' (1:8)
+2020-11-17T22:32:56.149Z 	info: 		The process has started.
+2020-11-17T22:32:56.150Z 	info: 		A source file has been provided. The code to be compiled can be found in code.1s
+2020-11-17T22:32:56.150Z 	info: 		The code has been succesfully load
+2020-11-17T22:32:56.150Z 	info: 		The compilation process is starting
+2020-11-17T22:32:56.150Z 	info: 		The parser has been extended to support date literals
+2020-11-17T22:32:56.150Z 	info: 		The parsing process has started
+2020-11-17T22:32:56.153Z 	error: 		Identifier directly after number (1:0)
+2020-11-17T22:33:22.372Z 	info: 		The process has started.
+2020-11-17T22:33:22.373Z 	info: 		A source file has been provided. The code to be compiled can be found in code.1s
+2020-11-17T22:33:22.373Z 	info: 		The code has been succesfully load
+2020-11-17T22:33:22.373Z 	info: 		The compilation process is starting
+2020-11-17T22:33:22.373Z 	info: 		The parser has been extended to support date literals
+2020-11-17T22:33:22.373Z 	info: 		The parsing process has started
+2020-11-17T22:33:22.377Z 	error: 		Unexpected character '∞' (1:8)
+2020-11-17T22:34:33.892Z 	info: 		The process has started.
+2020-11-17T22:34:33.892Z 	info: 		A source file has been provided. The code to be compiled can be found in code.1s
+2020-11-17T22:34:33.893Z 	info: 		The code has been succesfully load
+2020-11-17T22:34:33.893Z 	info: 		The compilation process is starting
+2020-11-17T22:34:33.893Z 	info: 		The parser has been extended to support date literals
+2020-11-17T22:34:33.893Z 	info: 		The parsing process has started
+2020-11-17T22:34:33.896Z 	error: 		Unexpected character '∞' (1:8)
+2020-11-17T22:35:12.073Z 	info: 		The process has started.
+2020-11-17T22:35:12.073Z 	info: 		A source file has been provided. The code to be compiled can be found in code.1s
+2020-11-17T22:35:12.073Z 	info: 		The code has been succesfully load
+2020-11-17T22:35:12.074Z 	info: 		The compilation process is starting
+2020-11-17T22:35:12.074Z 	info: 		The parser has been extended to support date literals
+2020-11-17T22:35:12.074Z 	info: 		The parsing process has started
+2020-11-17T22:35:12.076Z 	error: 		Unexpected character '∞' (1:8)
+2020-11-17T22:35:20.059Z 	info: 		The process has started.
+2020-11-17T22:35:20.060Z 	info: 		A source file has been provided. The code to be compiled can be found in code.1s
+2020-11-17T22:35:20.060Z 	info: 		The code has been succesfully load
+2020-11-17T22:35:20.060Z 	info: 		The compilation process is starting
+2020-11-17T22:35:20.060Z 	info: 		The parser has been extended to support date literals
+2020-11-17T22:35:20.061Z 	info: 		The parsing process has started
+2020-11-17T22:35:20.066Z 	error: 		Unexpected character '∞' (5:12)
+2020-11-17T22:35:42.999Z 	info: 		The process has started.
+2020-11-17T22:35:43.000Z 	info: 		A source file has been provided. The code to be compiled can be found in code.1s
+2020-11-17T22:35:43.000Z 	info: 		The code has been succesfully load
+2020-11-17T22:35:43.000Z 	info: 		The compilation process is starting
+2020-11-17T22:35:43.000Z 	info: 		The parser has been extended to support date literals
+2020-11-17T22:35:43.000Z 	info: 		The parsing process has started
+2020-11-17T22:35:43.006Z 	error: 		Unexpected character '∞' (4:12)
+2020-11-17T22:36:02.146Z 	info: 		The process has started.
+2020-11-17T22:36:02.147Z 	info: 		A source file has been provided. The code to be compiled can be found in code.1s
+2020-11-17T22:36:02.147Z 	info: 		The code has been succesfully load
+2020-11-17T22:36:02.147Z 	info: 		The compilation process is starting
+2020-11-17T22:36:02.147Z 	info: 		The parser has been extended to support date literals
+2020-11-17T22:36:02.147Z 	info: 		The parsing process has started
+2020-11-17T22:36:02.154Z 	error: 		Unexpected character '∞' (4:12)
+2020-11-17T22:36:14.216Z 	info: 		The process has started.
+2020-11-17T22:36:14.217Z 	info: 		A source file has been provided. The code to be compiled can be found in code.1s
+2020-11-17T22:36:14.217Z 	info: 		The code has been succesfully load
+2020-11-17T22:36:14.217Z 	info: 		The compilation process is starting
+2020-11-17T22:36:14.217Z 	info: 		The parser has been extended to support date literals
+2020-11-17T22:36:14.217Z 	info: 		The parsing process has started
+2020-11-17T22:36:14.224Z 	error: 		Unexpected character '∞' (4:12)
+2020-11-17T22:40:43.262Z 	info: 		The process has started.
+2020-11-17T22:40:43.262Z 	info: 		A source file has been provided. The code to be compiled can be found in code.1s
+2020-11-17T22:40:43.263Z 	info: 		The code has been succesfully load
+2020-11-17T22:40:43.263Z 	info: 		The compilation process is starting
+2020-11-17T22:40:43.263Z 	info: 		The parser has been extended to support date literals
+2020-11-17T22:40:43.263Z 	info: 		The parsing process has started
+2020-11-17T22:40:43.268Z 	error: 		Unexpected character '∞' (4:12)
+2020-11-17T22:47:22.057Z 	info: 		The process has started.
+2020-11-17T22:47:22.058Z 	info: 		A source file has been provided. The code to be compiled can be found in code.1s
+2020-11-17T22:47:22.058Z 	info: 		The code has been succesfully load
+2020-11-17T22:47:22.058Z 	info: 		The compilation process is starting
+2020-11-17T22:47:22.058Z 	info: 		The parser has been extended to support date literals
+2020-11-17T22:47:22.058Z 	info: 		The parsing process has started
+2020-11-17T22:47:22.063Z 	info: 		The code has been successfully parsed
+2020-11-17T22:47:22.065Z 	info: 		A array multiassign expresison has been found. The code has been changed to an assign seqeunce. 
+	----- x[1, 2, 3] = y  
+	+++++ x[3] = x[2] = x[1] = y
+2020-11-17T22:47:22.066Z 	info: 		A var declarator has been found and it has been converted into a let declarator. 
+	----- var w = 1;
+	+++++ let w = 1;
+2020-11-17T22:47:22.066Z 	info: 		A date literal has been found and it has been converted into a Date object. 
+	----- 2020.10.24t4
+	+++++ new Date(Date.UTC(2020, 10, 24, 4))
+2020-11-17T22:47:22.067Z 	info: 		A var declarator has been found and it has been converted into a let declarator. 
+	----- var z = new Date(Date.UTC(2020, 10, 24, 4));
+	+++++ let z = new Date(Date.UTC(2020, 10, 24, 4));
+2020-11-17T22:47:22.067Z 	info: 		A var declarator has been found and it has been converted into a let declarator. 
+	----- var t = Infinity;
+	+++++ let t = Infinity;
+2020-11-17T22:47:22.069Z 	info: 		A function in statement context has been found. It has been assign into a constant with the same name. 
+	----- 
+function g(x, y) {
+    x[3] = x[2] = x[1] = y;
+    let w = 1;
+    let z = new Date(Date.UTC(2020, 10, 24, 4));
+    let t = Infinity;
+}  
+	+++++ 
+const g = function g(x, y) {
+    x[3] = x[2] = x[1] = y;
+    let w = 1;
+    let z = new Date(Date.UTC(2020, 10, 24, 4));
+    let t = Infinity;
+};
+2020-11-17T22:47:22.069Z 	info: 		The compilation process has ended
+2020-11-17T22:47:22.069Z 	info: 		--opt option has been provided with OFF data or has not been provided.
+2020-11-17T22:47:22.069Z 	info: 		Optimization and minification process will not be performed.
+2020-11-17T22:47:22.069Z 	info: 		An output file has been provided. Compiled code will be save in undefined
+2020-11-17T22:47:22.070Z 	info: 		The compiled code has been loaded into code.js.
+2020-11-17T22:47:22.070Z 	info: 		All proccess has ended without errors
+2020-11-17T22:47:38.700Z 	info: 		The process has started.
+2020-11-17T22:47:38.700Z 	info: 		A source file has been provided. The code to be compiled can be found in code.1s
+2020-11-17T22:47:38.701Z 	info: 		The code has been succesfully load
+2020-11-17T22:47:38.701Z 	info: 		The compilation process is starting
+2020-11-17T22:47:38.701Z 	info: 		The parser has been extended to support date literals
+2020-11-17T22:47:38.701Z 	info: 		The parsing process has started
+2020-11-17T22:47:38.711Z 	info: 		The code has been successfully parsed
+2020-11-17T22:47:38.713Z 	info: 		A array multiassign expresison has been found. The code has been changed to an assign seqeunce. 
+	----- x[1, 2, 3] = y  
+	+++++ x[3] = x[2] = x[1] = y
+2020-11-17T22:47:38.713Z 	info: 		A var declarator has been found and it has been converted into a let declarator. 
+	----- var w = 1;
+	+++++ let w = 1;
+2020-11-17T22:47:38.714Z 	info: 		A date literal has been found and it has been converted into a Date object. 
+	----- 2020.10.24t4
+	+++++ new Date(Date.UTC(2020, 10, 24, 4))
+2020-11-17T22:47:38.714Z 	info: 		A var declarator has been found and it has been converted into a let declarator. 
+	----- var z = new Date(Date.UTC(2020, 10, 24, 4));
+	+++++ let z = new Date(Date.UTC(2020, 10, 24, 4));
+2020-11-17T22:47:38.714Z 	info: 		A var declarator has been found and it has been converted into a let declarator. 
+	----- var t = Infinity;
+	+++++ let t = Infinity;
+2020-11-17T22:47:38.715Z 	info: 		A function in statement context has been found. It has been assign into a constant with the same name. 
+	----- 
+function g(x, y) {
+    x[3] = x[2] = x[1] = y;
+    let w = 1;
+    let z = new Date(Date.UTC(2020, 10, 24, 4));
+    let t = Infinity;
+}  
+	+++++ 
+const g = function g(x, y) {
+    x[3] = x[2] = x[1] = y;
+    let w = 1;
+    let z = new Date(Date.UTC(2020, 10, 24, 4));
+    let t = Infinity;
+};
+2020-11-17T22:47:38.715Z 	info: 		The compilation process has ended
+2020-11-17T22:47:38.715Z 	info: 		--opt option has been provided with OFF data or has not been provided.
+2020-11-17T22:47:38.715Z 	info: 		Optimization and minification process will not be performed.
+2020-11-17T22:47:38.715Z 	info: 		An output file has been provided. Compiled code will be save in undefined
+2020-11-17T22:47:38.716Z 	info: 		The compiled code has been loaded into code.js.
+2020-11-17T22:47:38.716Z 	info: 		All proccess has ended without errors
+2020-11-17T22:50:16.460Z 	info: 		The process has started.
+2020-11-17T22:50:16.460Z 	info: 		A source file has been provided. The code to be compiled can be found in code.1s
+2020-11-17T22:50:16.461Z 	info: 		The code has been succesfully load
+2020-11-17T22:50:16.461Z 	info: 		The compilation process is starting
+2020-11-17T22:50:16.461Z 	info: 		The parser has been extended to support date literals
+2020-11-17T22:50:16.461Z 	info: 		The parsing process has started
+2020-11-17T22:50:16.465Z 	info: 		The code has been successfully parsed
+2020-11-17T22:50:16.468Z 	info: 		A array multiassign expresison has been found. The code has been changed to an assign seqeunce. 
+	----- x[1, 2, 3] = y  
+	+++++ x[3] = x[2] = x[1] = y
+2020-11-17T22:50:16.469Z 	info: 		A var declarator has been found and it has been converted into a let declarator. 
+	----- var w = 1;
+	+++++ let w = 1;
+2020-11-17T22:50:16.469Z 	info: 		A date literal has been found and it has been converted into a Date object. 
+	----- 2020.10.24t4
+	+++++ new Date(Date.UTC(2020, 10, 24, 4))
+2020-11-17T22:50:16.471Z 	info: 		A var declarator has been found and it has been converted into a let declarator. 
+	----- var z = new Date(Date.UTC(2020, 10, 24, 4));
+	+++++ let z = new Date(Date.UTC(2020, 10, 24, 4));
+2020-11-17T22:50:16.471Z 	info: 		A var declarator has been found and it has been converted into a let declarator. 
+	----- var t = 1e+400;
+	+++++ let t = 1e+400;
+2020-11-17T22:50:16.472Z 	info: 		A function in statement context has been found. It has been assign into a constant with the same name. 
+	----- 
+function g(x, y) {
+    x[3] = x[2] = x[1] = y;
+    let w = 1;
+    let z = new Date(Date.UTC(2020, 10, 24, 4));
+    let t = 1e+400;
+}  
+	+++++ 
+const g = function g(x, y) {
+    x[3] = x[2] = x[1] = y;
+    let w = 1;
+    let z = new Date(Date.UTC(2020, 10, 24, 4));
+    let t = 1e+400;
+};
+2020-11-17T22:50:16.472Z 	info: 		The compilation process has ended
+2020-11-17T22:50:16.472Z 	info: 		--opt option has been provided with OFF data or has not been provided.
+2020-11-17T22:50:16.473Z 	info: 		Optimization and minification process will not be performed.
+2020-11-17T22:50:16.473Z 	info: 		An output file has been provided. Compiled code will be save in undefined
+2020-11-17T22:50:16.473Z 	info: 		The compiled code has been loaded into code.js.
+2020-11-17T22:50:16.473Z 	info: 		All proccess has ended without errors
+2020-11-17T22:52:33.449Z 	info: 		The process has started.
+2020-11-17T22:52:33.450Z 	info: 		A source file has been provided. The code to be compiled can be found in code.1s
+2020-11-17T22:52:33.450Z 	info: 		The code has been succesfully load
+2020-11-17T22:52:33.450Z 	info: 		The compilation process is starting
+2020-11-17T22:52:33.450Z 	info: 		The parser has been extended to support date literals
+2020-11-17T22:52:33.450Z 	info: 		The parsing process has started
+2020-11-17T22:52:33.455Z 	info: 		The code has been successfully parsed
+2020-11-17T22:52:33.459Z 	info: 		A array multiassign expresison has been found. The code has been changed to an assign seqeunce. 
+	----- x[1, 2, 3] = y  
+	+++++ x[3] = x[2] = x[1] = y
+2020-11-17T22:52:33.459Z 	info: 		A var declarator has been found and it has been converted into a let declarator. 
+	----- var w = 1;
+	+++++ let w = 1;
+2020-11-17T22:52:33.460Z 	info: 		A date literal has been found and it has been converted into a Date object. 
+	----- 2020.10.24t4
+	+++++ new Date(Date.UTC(2020, 10, 24, 4))
+2020-11-17T22:52:33.460Z 	info: 		A var declarator has been found and it has been converted into a let declarator. 
+	----- var z = new Date(Date.UTC(2020, 10, 24, 4));
+	+++++ let z = new Date(Date.UTC(2020, 10, 24, 4));
+2020-11-17T22:52:33.460Z 	info: 		A var declarator has been found and it has been converted into a let declarator. 
+	----- var t = 1e+400;
+	+++++ let t = 1e+400;
+2020-11-17T22:52:33.461Z 	info: 		A function in statement context has been found. It has been assign into a constant with the same name. 
+	----- 
+function g(x, y) {
+    x[3] = x[2] = x[1] = y;
+    let w = 1;
+    let z = new Date(Date.UTC(2020, 10, 24, 4));
+    let t = 1e+400;
+}  
+	+++++ 
+const g = function g(x, y) {
+    x[3] = x[2] = x[1] = y;
+    let w = 1;
+    let z = new Date(Date.UTC(2020, 10, 24, 4));
+    let t = 1e+400;
+};
+2020-11-17T22:52:33.461Z 	info: 		The compilation process has ended
+2020-11-17T22:52:33.461Z 	info: 		--opt option has been provided with ON data.
+2020-11-17T22:52:33.461Z 	info: 		Optimisation and minification proccess will start
+2020-11-17T22:52:33.480Z 	info: 		Optimization and minification process has ended
+2020-11-17T22:52:33.480Z 	info: 		An output file has been provided. Compiled code will be save in undefined
+2020-11-17T22:52:33.480Z 	info: 		The compiled code has been loaded into code.js.
+2020-11-17T22:52:33.481Z 	info: 		All proccess has ended without errors
+2020-11-17T22:52:55.829Z 	info: 		The process has started.
+2020-11-17T22:52:55.830Z 	info: 		A source file has been provided. The code to be compiled can be found in code.1s
+2020-11-17T22:52:55.830Z 	info: 		The code has been succesfully load
+2020-11-17T22:52:55.830Z 	info: 		The compilation process is starting
+2020-11-17T22:52:55.830Z 	info: 		The parser has been extended to support date literals
+2020-11-17T22:52:55.830Z 	info: 		The parsing process has started
+2020-11-17T22:52:55.835Z 	info: 		The code has been successfully parsed
+2020-11-17T22:52:55.840Z 	info: 		A array multiassign expresison has been found. The code has been changed to an assign seqeunce. 
+	----- x[1, 2, 3] = y  
+	+++++ x[3] = x[2] = x[1] = y
+2020-11-17T22:52:55.840Z 	info: 		A var declarator has been found and it has been converted into a let declarator. 
+	----- var w = 1;
+	+++++ let w = 1;
+2020-11-17T22:52:55.841Z 	info: 		A date literal has been found and it has been converted into a Date object. 
+	----- 2020.10.24t4
+	+++++ new Date(Date.UTC(2020, 10, 24, 4))
+2020-11-17T22:52:55.841Z 	info: 		A var declarator has been found and it has been converted into a let declarator. 
+	----- var z = new Date(Date.UTC(2020, 10, 24, 4));
+	+++++ let z = new Date(Date.UTC(2020, 10, 24, 4));
+2020-11-17T22:52:55.841Z 	info: 		A var declarator has been found and it has been converted into a let declarator. 
+	----- var t = 1e+400;
+	+++++ let t = 1e+400;
+2020-11-17T22:52:55.841Z 	info: 		A var declarator has been found and it has been converted into a let declarator. 
+	----- var z = t + t;
+	+++++ let z = t + t;
+2020-11-17T22:52:55.843Z 	info: 		A function in statement context has been found. It has been assign into a constant with the same name. 
+	----- 
+function g(x, y) {
+    x[3] = x[2] = x[1] = y;
+    let w = 1;
+    let z = new Date(Date.UTC(2020, 10, 24, 4));
+    let t = 1e+400;
+    let z = t + t;
+}  
+	+++++ 
+const g = function g(x, y) {
+    x[3] = x[2] = x[1] = y;
+    let w = 1;
+    let z = new Date(Date.UTC(2020, 10, 24, 4));
+    let t = 1e+400;
+    let z = t + t;
+};
+2020-11-17T22:52:55.843Z 	info: 		The compilation process has ended
+2020-11-17T22:52:55.843Z 	info: 		--opt option has been provided with ON data.
+2020-11-17T22:52:55.843Z 	info: 		Optimisation and minification proccess will start
+2020-11-17T22:53:13.287Z 	info: 		The process has started.
+2020-11-17T22:53:13.288Z 	info: 		A source file has been provided. The code to be compiled can be found in code.1s
+2020-11-17T22:53:13.289Z 	info: 		The code has been succesfully load
+2020-11-17T22:53:13.289Z 	info: 		The compilation process is starting
+2020-11-17T22:53:13.289Z 	info: 		The parser has been extended to support date literals
+2020-11-17T22:53:13.289Z 	info: 		The parsing process has started
+2020-11-17T22:53:13.294Z 	info: 		The code has been successfully parsed
+2020-11-17T22:53:13.297Z 	info: 		A array multiassign expresison has been found. The code has been changed to an assign seqeunce. 
+	----- x[1, 2, 3] = y  
+	+++++ x[3] = x[2] = x[1] = y
+2020-11-17T22:53:13.298Z 	info: 		A var declarator has been found and it has been converted into a let declarator. 
+	----- var w = 1;
+	+++++ let w = 1;
+2020-11-17T22:53:13.298Z 	info: 		A date literal has been found and it has been converted into a Date object. 
+	----- 2020.10.24t4
+	+++++ new Date(Date.UTC(2020, 10, 24, 4))
+2020-11-17T22:53:13.299Z 	info: 		A var declarator has been found and it has been converted into a let declarator. 
+	----- var z = new Date(Date.UTC(2020, 10, 24, 4));
+	+++++ let z = new Date(Date.UTC(2020, 10, 24, 4));
+2020-11-17T22:53:13.299Z 	info: 		A var declarator has been found and it has been converted into a let declarator. 
+	----- var t = 1e+400;
+	+++++ let t = 1e+400;
+2020-11-17T22:53:13.301Z 	info: 		A function in statement context has been found. It has been assign into a constant with the same name. 
+	----- 
+function g(x, y) {
+    x[3] = x[2] = x[1] = y;
+    let w = 1;
+    let z = new Date(Date.UTC(2020, 10, 24, 4));
+    let t = 1e+400;
+    console.log(t);
+}  
+	+++++ 
+const g = function g(x, y) {
+    x[3] = x[2] = x[1] = y;
+    let w = 1;
+    let z = new Date(Date.UTC(2020, 10, 24, 4));
+    let t = 1e+400;
+    console.log(t);
+};
+2020-11-17T22:53:13.301Z 	info: 		The compilation process has ended
+2020-11-17T22:53:13.301Z 	info: 		--opt option has been provided with ON data.
+2020-11-17T22:53:13.301Z 	info: 		Optimisation and minification proccess will start
+2020-11-17T22:53:13.320Z 	info: 		Optimization and minification process has ended
+2020-11-17T22:53:13.320Z 	info: 		An output file has been provided. Compiled code will be save in undefined
+2020-11-17T22:53:13.321Z 	info: 		The compiled code has been loaded into code.js.
+2020-11-17T22:53:13.321Z 	info: 		All proccess has ended without errors
